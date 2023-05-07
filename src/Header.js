@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='flex items-center justify-between w-full bg-black p-3 text-white text-lg font-sans px-[20%] shadow-2xl'>
+    <div className='flex items-center justify-between w-full bg-black p-3 text-white text-lg font-sans px-[20%] shadow-2xl fixed top-0 z-10'>
         <div className='cursor-pointer'>
             <img src='https://mrsool.co/images/Mrsool-Logo-v2.png' alt='' />
         </div>
