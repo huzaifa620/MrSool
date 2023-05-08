@@ -1,26 +1,33 @@
-import React, {useState} from 'react'
-import ImageWithZoom from './ZoomableImage'
-import img1 from './R1.png'
-import img2 from './R2.png'
-import img3 from './R3.png'
+import React, { useState, useContext, useEffect } from 'react'
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 import spoon from './cutlery.png'
-import bike from './delivery-bike.png'
+import car from './car.png'
 import Menu from './DropdownMenu'
-
+import { Context } from './Context';
+import data from './data.js'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const Home = () => {
 
-    const [hotels, setHotels] = React.useState([1,2,3,4,5,6,7,8,9,10])
-
+    const {index, setIndex, time, timeChange} = useContext(Context)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = (date) => {
         setSelectedDate(date);
-        console.log(date)
     };
+    const [sum, setSum] = useState(0)
+
+    useEffect(() => {
+        if (time === ' 08am - 10am ') {
+          setIndex(1);
+        } else if (time === ' 02pm - 04pm ') {
+          setIndex(2);
+        } else if (time === ' 09pm - 11pm ') {
+          setIndex(3);
+        }
+        
+      }, [time, sum]);
 
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-24 p-2 pt-[5%]'>
@@ -45,7 +52,7 @@ const Home = () => {
                 </div>
 
                 <div className='w-full h-full relative'>
-                    <img src={img1} alt='' className='h-full rounded-2xl'/>
+                    <img src={data[index].image} alt='' className='h-full rounded-2xl'/>
                     <div className='flex flex-col space-y-2 absolute inset-0 p-6 justify-end'>
                         <ZoomInIcon />
                         <ZoomOutIcon />
@@ -64,22 +71,24 @@ const Home = () => {
                 </div>
                 <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-black h-full p-4 space-y-2'>
 
-                    {hotels.map((ind, val) => (
+                    {
+                        data[index]?.restaurants.map((val, ind) => (
 
-                        <div key={ind} className='flex border rounded-md bg-white space-x-4 p-4 w-full'>
-                            <div className='w-[20%]'>
-                                <img src={spoon} alt='' className='w-16 h-16' />
-                            </div>
-                            <div className='w-full flex flex-col space-y-2 justify-center'>
-                                <p className='tracking-widest text-lg font-bold'>Asian Food Restaurant</p>
-                                <div className='flex space-x-3 items-center'>
-                                    <img src={bike} alt='' className='w-6 h-6' />
-                                    <p className='text-sm'> Riders required : 20 (5%) </p>
+                            <div key={ind} className='flex border rounded-md bg-white space-x-4 p-4 w-full'>
+                                <div className='w-[20%]'>
+                                    <img src={val.imgUrl} alt='' className='w-16 h-16' />
+                                </div>
+                                <div className='w-full flex flex-col space-y-2 justify-center'>
+                                    <p className='tracking-widest text-xl font-bold'> {val.name} </p>
+                                    <div className='flex space-x-3 items-center'>
+                                        <img src={car} alt='' className='w-6 h-6' />
+                                        <p className=''> Riders required : {val.riders} ({val.sum}%) </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    ))}
+                        ))
+                    }
 
                 </div>
             </div>
@@ -92,23 +101,19 @@ const Home = () => {
             </div>
             <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-black h-full p-4 space-y-2'>
 
-                {hotels.map((ind, val) => (
-
-                    <div key={ind} className='flex border rounded-md bg-white space-x-4 p-4 w-full'>
-                        <div className='w-[20%]'>
-                            <img src={spoon} alt='' className='w-32 h-32' />
-                        </div>
-                        <div className='w-full flex flex-col space-y-2 justify-center'>
-                            <p className='tracking-widest text-2xl font-bold'>Asian Food Restaurant</p>
-                            <p>Nearby Riders</p>
-                            <div className='flex space-x-3 items-center'>
-                                <img src={bike} alt='' className='w-6 h-6' />
-                                <p className='text-sm'> Riders required : 20 (5%) </p>
-                            </div>
+                <div className='flex border rounded-md bg-white space-x-4 p-4 w-full'>
+                    <div className='w-[20%]'>
+                        <img src={spoon} alt='' className='w-32 h-32' />
+                    </div>
+                    <div className='w-full flex flex-col space-y-2 justify-center'>
+                        <p className='tracking-widest text-2xl font-bold'>Asian Food Restaurant</p>
+                        <p>Nearby Riders</p>
+                        <div className='flex space-x-3 items-center'>
+                            <img src={car} alt='' className='w-6 h-6' />
+                            <p className='text-sm'> Riders required : 20 (5%) </p>
                         </div>
                     </div>
-
-                ))}
+                </div>
 
             </div>
         </div>

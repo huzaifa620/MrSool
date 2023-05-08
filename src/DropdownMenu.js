@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { motion } from "framer-motion";
+import { Context } from './Context';
 
 const itemVariants = {
   open: {
@@ -11,13 +12,7 @@ const itemVariants = {
 };
 
 export default function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [time, setTime] = useState("Select Time")
-
-  const timeChange = (event) => {
-    setIsOpen(false)
-    setTime(event.target.textContent)
-  }
+  const { time, setTime, timeChange, isOpen, setIsOpen } = useContext(Context)
 
   return (
     <motion.nav
@@ -69,7 +64,6 @@ export default function App() {
         <motion.li className="text-base lowercase border-b-2 border-white" variants={itemVariants}> <button onClick={timeChange}> 08am - 10am </button> </motion.li>
         <motion.li className="text-base lowercase border-b-2 border-white" variants={itemVariants}> <button onClick={timeChange}> 02pm - 04pm </button> </motion.li>
         <motion.li className="text-base lowercase border-b-2 border-white" variants={itemVariants}> <button onClick={timeChange}> 09pm - 11pm </button> </motion.li>
-
       </motion.ul>
 
     </motion.nav>
