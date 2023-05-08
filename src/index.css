@@ -5,3 +5,13 @@
 body {
     overflow: hidden;
 }
+
+/* .react-datepicker__month-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center !important;
+} */
+
+.react-datepicker-wrapper {
+    width: 240px;
+}

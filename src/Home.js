@@ -1,14 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ImageWithZoom from './ZoomableImage'
-import img1 from './R2.png'
+import img1 from './R1.png'
+import img2 from './R2.png'
+import img3 from './R3.png'
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 import spoon from './cutlery.png'
 import bike from './delivery-bike.png'
+import Menu from './DropdownMenu'
+
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Home = () => {
 
     const [hotels, setHotels] = React.useState([1,2,3,4,5,6,7,8,9,10])
+
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+        console.log(date)
+    };
 
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-24 p-2 pt-[5%]'>
@@ -21,9 +33,17 @@ const Home = () => {
         <div className='flex items-start justify-center space-x-12 h-[80%]'>
 
             <div className='flex flex-col justify-center w-[70%] h-full space-y-4'>
-                <div className='tracking-widest uppercase text-xl font-semibold'>
-                    Delivery Demand Forecaster
+
+                <div className='flex w-full items-center tracking-widest uppercase text-xl font-semibold justify-between'>
+                    <p className='w-1/2'>Delivery Demand Forecaster</p>
+                    
+                    <div className=''>
+                        <DatePicker className='border bg-slate-300 py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-[240px]' selected={selectedDate} onChange={handleDateChange} />
+                    </div>
+   
+                    <Menu />
                 </div>
+
                 <div className='w-full h-full relative'>
                     <img src={img1} alt='' className='h-full rounded-2xl'/>
                     <div className='flex flex-col space-y-2 absolute inset-0 p-6 justify-end'>
@@ -32,6 +52,7 @@ const Home = () => {
                     </div>
 
                 </div>
+
                 <div className=''>
                     Red Circles depicting the restaurants where demand is forcasted with high probability
                 </div>
