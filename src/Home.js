@@ -107,62 +107,66 @@ const Home = () => {
             </div>
             <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-black h-full p-4 space-y-2'>
 
-                <div className='flex border rounded-md bg-white space-x-4 p-4 w-full'>
-                    <div className='w-[20%]'>
-                        <img src={spoon} alt='' className='w-32 h-32' />
-                    </div>
-                    <div className='w-full flex flex-col space-y-2 justify-center'>
-                        <p className='tracking-widest text-2xl font-bold'>Asian Food Restaurant</p>
-                        <p>Nearby Riders</p>
-                        <div className='flex space-x-3 items-center'>
+                {
+                    data[index]?.restaurants.map((val, ind) => (
+                        
+                        <div className='flex border rounded-2xl bg-white space-x-4 p-4 w-full'>
+                            <div className='w-[20%]'>
+                                <img src={spoon} alt='' className='w-32 h-32' />
+                            </div>
+                            <div className='w-full flex flex-col space-y-2 justify-center'>
+                                <p className='tracking-widest text-2xl font-bold'> {val.name} </p>
+                                <p>Nearby Riders</p>
+                                <div className='flex space-x-3 items-center'>
 
-                            
+                                    {expanded ? (
+                                        <div className='w-full flex flex-col'>
+                                            {
+                                                data[index]?.restaurants.map((val, ind) => (
 
-                            {expanded ? (
-                                <div className='w-full flex flex-col'>
-                                    {
-                                        data[index]?.restaurants.map((val, ind) => (
+                                                    <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
+                                                        <div className='w-[10%]'>
+                                                            <img src={car} alt='' className='w-12 h-12' />
+                                                        </div>
+                                                        <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                                            <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
+                                                            <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
+                                                            <p className=''> Expected Earning: 10 SAR </p>
+                                                        </div>
+                                                    </div>
 
-                                            <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
-                                                <div className='w-[10%]'>
-                                                    <img src={car} alt='' className='w-12 h-12' />
-                                                </div>
-                                                <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                                    <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
-                                                    <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
-                                                    <p className=''> Expected Earning: 10 SAR </p>
-                                                </div>
-                                            </div>
+                                                ))
+                                            }
+                                            <button onClick={handleToggleExpand}>Show Less</button>
+                                        </div>
+                                    ) : (
+                                        <div className='w-full flex flex-col'>
+                                            {
+                                                data[index]?.restaurants.slice(3).map((val, ind) => (
 
-                                        ))
-                                    }
-                                    <button onClick={handleToggleExpand}>Show Less</button>
+                                                    <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
+                                                        <div className='w-[10%]'>
+                                                            <img src={car} alt='' className='w-12 h-12' />
+                                                        </div>
+                                                        <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                                            <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
+                                                            <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
+                                                            <p className=''> Expected Earning: 10 SAR </p>
+                                                        </div>
+                                                    </div>
+
+                                                ))
+                                            }
+                                            <button onClick={handleToggleExpand}>Show More</button>
+                                        </div>
+                                    )}
+
                                 </div>
-                            ) : (
-                                <div className='w-full flex flex-col'>
-                                    {
-                                        data[index]?.restaurants.slice(3).map((val, ind) => (
-
-                                            <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
-                                                <div className='w-[10%]'>
-                                                    <img src={car} alt='' className='w-12 h-12' />
-                                                </div>
-                                                <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                                    <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
-                                                    <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
-                                                    <p className=''> Expected Earning: 10 SAR </p>
-                                                </div>
-                                            </div>
-
-                                        ))
-                                    }
-                                    <button onClick={handleToggleExpand}>Show More</button>
-                                </div>
-                            )}
-
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        
+                    ))
+                }
 
             </div>
         </div>
