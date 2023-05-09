@@ -11,7 +11,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const Home = () => {
 
-    const {index, setIndex, time, timeChange} = useContext(Context)
+    const {index, setIndex, time, timeChange, count, setCount} = useContext(Context)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -31,11 +31,17 @@ const Home = () => {
 
     const handleZoomIn = () => {
         setZoomLevel(zoomLevel + 0.1);
+        if (index !== 0) {
+            setCount(count+1)
+        }
     };
 
     const handleZoomOut = () => {
         if (zoomLevel > 1) {
             setZoomLevel(zoomLevel - 0.1);
+            if (index !== 0) {
+                setCount(count-1)
+            }
         }
     };
 
@@ -103,7 +109,7 @@ const Home = () => {
                                     <p className='tracking-widest text-xl font-bold'> {val.name} </p>
                                     <div className='flex space-x-3 items-center'>
                                         <img src={car} alt='' className='w-6 h-6' />
-                                        <p className=''> Riders required : {val.riders} ( {val.riders&&(val.riders / data[index].sum * 100).toFixed(1)} %) </p>
+                                        <p className=''> Riders required : {Math.max(val.riders - count, 0)} ( {val.riders&&(Math.max(val.riders - count, 0) / data[index].sum * 100).toFixed(1)} %) </p>
                                     </div>
                                 </div>
                             </div>
