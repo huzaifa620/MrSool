@@ -18,6 +18,12 @@ const Home = () => {
     };
     const [sum, setSum] = useState(0)
 
+    const [expanded, setExpanded] = useState(false);
+
+    const handleToggleExpand = () => {
+        setExpanded(!expanded);
+    };
+
     useEffect(() => {
         if (time === ' 08am - 10am ') {
           setIndex(1);
@@ -109,8 +115,51 @@ const Home = () => {
                         <p className='tracking-widest text-2xl font-bold'>Asian Food Restaurant</p>
                         <p>Nearby Riders</p>
                         <div className='flex space-x-3 items-center'>
-                            <img src={car} alt='' className='w-6 h-6' />
-                            <p className='text-sm'> Riders required : 20 (5%) </p>
+
+                            
+
+                            {expanded ? (
+                                <div className='w-full flex flex-col'>
+                                    {
+                                        data[index]?.restaurants.map((val, ind) => (
+
+                                            <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
+                                                <div className='w-[10%]'>
+                                                    <img src={car} alt='' className='w-12 h-12' />
+                                                </div>
+                                                <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                                    <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
+                                                    <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
+                                                    <p className=''> Expected Earning: 10 SAR </p>
+                                                </div>
+                                            </div>
+
+                                        ))
+                                    }
+                                    <button onClick={handleToggleExpand}>Show Less</button>
+                                </div>
+                            ) : (
+                                <div className='w-full flex flex-col'>
+                                    {
+                                        data[index]?.restaurants.slice(3).map((val, ind) => (
+
+                                            <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
+                                                <div className='w-[10%]'>
+                                                    <img src={car} alt='' className='w-12 h-12' />
+                                                </div>
+                                                <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                                    <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
+                                                    <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
+                                                    <p className=''> Expected Earning: 10 SAR </p>
+                                                </div>
+                                            </div>
+
+                                        ))
+                                    }
+                                    <button onClick={handleToggleExpand}>Show More</button>
+                                </div>
+                            )}
+
                         </div>
                     </div>
                 </div>
