@@ -39,7 +39,7 @@ const Home = () => {
     <div className='flex flex-col items-center w-full h-screen space-y-24 p-2 pt-[5%]'>
 
         <div className='flex flex-col items-center justify-center w-[70%] space-y-8'>
-            <h2 className='text-5xl'> What is MRSOOL? </h2>
+            <h2 className='text-5xl'> Demand Forecaster </h2>
             <p className='text-center '>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
@@ -75,7 +75,7 @@ const Home = () => {
                 <div className='tracking-widest uppercase text-xl font-semibold'>
                     Rider Demand Forecaster
                 </div>
-                <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-black h-full p-4 space-y-2'>
+                <div className='bg-mrsool-green w-full flex flex-col items-center justify-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-black h-full p-4 space-y-2'>
 
                     {
                         data[index]?.restaurants.map((val, ind) => (
@@ -105,7 +105,7 @@ const Home = () => {
             <div className='tracking-widest uppercase text-xl font-semibold'>
                 Optimized Delivery Schedular
             </div>
-            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-black h-full p-4 space-y-2'>
+            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-black h-full p-4 py-8 space-y-4'>
 
                 {
                     data[index]?.restaurants.map((val, ind) => (
@@ -116,22 +116,22 @@ const Home = () => {
                             </div>
                             <div className='w-full flex flex-col space-y-2 justify-center'>
                                 <p className='tracking-widest text-2xl font-bold'> {val.name} </p>
-                                <p>Nearby Riders</p>
+                                <p> Nearby Riders </p>
                                 <div className='flex space-x-3 items-center'>
 
                                     {expanded ? (
-                                        <div className='w-full flex flex-col'>
+                                        <div className='w-full flex flex-col space-y-2'>
                                             {
-                                                data[index]?.restaurants.map((val, ind) => (
+                                                val.ridersDetails.map((value, indx) => (
 
-                                                    <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
+                                                    <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
                                                         <div className='w-[10%]'>
                                                             <img src={car} alt='' className='w-12 h-12' />
                                                         </div>
                                                         <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                                            <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
-                                                            <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
-                                                            <p className=''> Expected Earning: 10 SAR </p>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> {value.name} </p>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> Average Delivery Time : {value.time} mins </p>
+                                                            <p className='text-sm'> Expected Earning: {value.earning} SAR </p>
                                                         </div>
                                                     </div>
 
@@ -140,18 +140,18 @@ const Home = () => {
                                             <button onClick={handleToggleExpand}>Show Less</button>
                                         </div>
                                     ) : (
-                                        <div className='w-full flex flex-col'>
+                                        <div className='w-full flex flex-col space-y-2'>
                                             {
-                                                data[index]?.restaurants.slice(3).map((val, ind) => (
+                                                val.ridersDetails.slice(0, 2).map((value, indx) => (
 
-                                                    <div key={ind} className='flex border rounded-md bg-white w-full px-2'>
+                                                    <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
                                                         <div className='w-[10%]'>
                                                             <img src={car} alt='' className='w-12 h-12' />
                                                         </div>
                                                         <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                                            <p className='border-r-2 border-slate-500 px-4'> Hashim bin Ali </p>
-                                                            <p className='border-r-2 border-slate-500 px-4'> Average Delivery Time : 20 mins </p>
-                                                            <p className=''> Expected Earning: 10 SAR </p>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> {value.name} </p>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> Average Delivery Time : {value.time} mins </p>
+                                                            <p className='text-sm'> Expected Earning: {value.earning} SAR </p>
                                                         </div>
                                                     </div>
 
