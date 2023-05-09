@@ -27,6 +27,18 @@ const Home = () => {
         });
     };
 
+    const [zoomLevel, setZoomLevel] = useState(1);
+
+    const handleZoomIn = () => {
+        setZoomLevel(zoomLevel + 0.1);
+    };
+
+    const handleZoomOut = () => {
+        if (zoomLevel > 1) {
+            setZoomLevel(zoomLevel - 0.1);
+        }
+    };
+
     useEffect(() => {
         if (time === ' 08am - 10am ') {
           setIndex(1);
@@ -60,11 +72,11 @@ const Home = () => {
    
                 </div>
 
-                <div className='w-full relative border-2 border-black rounded-2xl h-[90%]'>
-                    <img src={data[index].image} alt='' className='w-full h-full object-contain rounded-2xl'/>
+                <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
+                    <img src={data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
                     <div className='flex flex-col space-y-2 absolute inset-0 p-6 justify-end'>
-                        <ZoomInIcon />
-                        <ZoomOutIcon />
+                        <ZoomInIcon onClick={handleZoomIn} />
+                        <ZoomOutIcon onClick={handleZoomOut} />
                     </div>
 
                 </div>
