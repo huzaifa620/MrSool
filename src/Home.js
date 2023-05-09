@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
-import spoon from './cutlery.png'
+import bike from './delivery-bike.png'
 import car from './car.png'
 import Menu from './DropdownMenu'
 import { Context } from './Context';
@@ -16,10 +16,9 @@ const Home = () => {
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
-    const [sum, setSum] = useState(0)
+    const [imgSrc, setImgSrc ] = useState([bike, car]);
 
     const [expanded, setExpanded] = useState([]);
-
     const handleToggleExpand = (index) => {
         setExpanded((prevExpanded) => {
             const updatedExpanded = [...prevExpanded];
@@ -37,7 +36,7 @@ const Home = () => {
           setIndex(3);
         }
         
-      }, [time, sum]);
+      }, [time]);
 
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-24 p-2 pt-[5%]'>
@@ -92,7 +91,7 @@ const Home = () => {
                                     <p className='tracking-widest text-xl font-bold'> {val.name} </p>
                                     <div className='flex space-x-3 items-center'>
                                         <img src={car} alt='' className='w-6 h-6' />
-                                        <p className=''> Riders required : {val.riders} ({val.sum}%) </p>
+                                        <p className=''> Riders required : {val.riders} ( {val.riders&&(val.riders / data[index].sum * 100).toFixed(1)} %) </p>
                                     </div>
                                 </div>
                             </div>
@@ -118,46 +117,46 @@ const Home = () => {
                         return (
                             <div key={ind} className='flex border rounded-2xl bg-white space-x-4 p-4 w-full'>
                                 <div className='flex w-[20%] items-center'>
-                                <img src={val.imgUrl} alt='' className='w-32 h-32' />
+                                    <img src={val.imgUrl} alt='' className='w-32 h-32' />
                                 </div>
                                 <div className='w-full flex flex-col space-y-2 justify-center'>
-                                <p className='tracking-widest text-2xl font-bold'>{val.name}</p>
-                                <p>Nearby Riders</p>
-                                <div className='flex space-x-3 items-center'>
-                                    {isExpanded ? (
-                                    <div className='w-full flex flex-col space-y-2'>
-                                        {val.ridersDetails.map((value, indx) => (
-                                        <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
-                                            <div className='w-[10%]'>
-                                            <img src={car} alt='' className='w-12 h-12' />
+                                    <p className='tracking-widest text-2xl font-bold'>{val.name}</p>
+                                    <p>Nearby Riders</p>
+                                    <div className='flex space-x-3 items-center'>
+                                        {isExpanded ? (
+                                            <div className='w-full flex flex-col space-y-2'>
+                                                {val.ridersDetails.map((value, indx) => (
+                                                    <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
+                                                        <div className='w-[10%]'>
+                                                            <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
+                                                        </div>
+                                                        <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>{value.name}</p>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>Average Delivery Time: {value.time} mins</p>
+                                                            <p className='text-sm'>Expected Earning: {value.earning} SAR</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                { (index!==0) && <button onClick={() => handleToggleExpand(ind)}>Show Less</button> }
                                             </div>
-                                            <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>{value.name}</p>
-                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>Average Delivery Time: {value.time} mins</p>
-                                            <p className='text-sm'>Expected Earning: {value.earning} SAR</p>
+                                        ) : (
+                                            <div className='w-full flex flex-col space-y-2'>
+                                                {val.ridersDetails.slice(0, 2).map((value, indx) => (
+                                                    <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
+                                                        <div className='w-[10%]'>
+                                                            <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
+                                                        </div>
+                                                        <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>{value.name}</p>
+                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>Average Delivery Time: {value.time} mins</p>
+                                                            <p className='text-sm'>Expected Earning: {value.earning} SAR</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                { (index!==0) && <button onClick={() => handleToggleExpand(ind)}>Show More</button> }
                                             </div>
-                                        </div>
-                                        ))}
-                                        { (index!=0) && <button onClick={() => handleToggleExpand(ind)}>Show Less</button> }
+                                        )}
                                     </div>
-                                    ) : (
-                                    <div className='w-full flex flex-col space-y-2'>
-                                        {val.ridersDetails.slice(0, 2).map((value, indx) => (
-                                        <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
-                                            <div className='w-[10%]'>
-                                            <img src={car} alt='' className='w-12 h-12' />
-                                            </div>
-                                            <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>{value.name}</p>
-                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>Average Delivery Time: {value.time} mins</p>
-                                            <p className='text-sm'>Expected Earning: {value.earning} SAR</p>
-                                            </div>
-                                        </div>
-                                        ))}
-                                        { (index!=0) && <button onClick={() => handleToggleExpand(ind)}>Show More</button> }
-                                    </div>
-                                    )}
-                                </div>
                                 </div>
                             </div>
                         );
