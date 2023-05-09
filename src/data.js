@@ -12,7 +12,6 @@ const data = [
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon}
         ]
     },
     {
@@ -87,7 +86,20 @@ const data = [
                     { name: "Hashim Sarwar", time: "25", earning: "40" },
                     { name: "Muhammad Baqar", time: '20', earning: "30" },
                 ],
-                imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"}
+                imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
+            },
+            {
+                name: "Asian Food Restaurant",
+                riders: 4,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '20', earning: "30" },
+                    { name: "Hashim Sarwar", time: "25", earning: "40" },
+                    { name: "Muhammad Baqar", time: '20', earning: "30" },
+                    { name: "Hashim Sarwar", time: "25", earning: "40" },
+                    { name: "Muhammad Baqar", time: '20', earning: "30" },
+                ],
+                imgUrl: 'https://img.freepik.com/premium-vector/fire-wok-asian-food-restaurant-logo_497517-604.jpg?w=2000'
+            }
         ],
     },
 
@@ -239,7 +251,8 @@ const data = [
                     { name: "Hashim Sarwar", time: "25", earning: "40" },
                     { name: "Muhammad Baqar", time: '20', earning: "30" },
                 ],
-                imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"}
+                imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
+            }
         ],
     },
 ]

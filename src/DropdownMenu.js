@@ -38,7 +38,7 @@ export default function App() {
 
       </motion.button>
       
-      <motion.ul className="bg-slate-300 p-2 flex flex-col space-y-2 text-center mt-12 absolute z-10 w-60"
+      <motion.ul className="bg-slate-300 p-2 flex flex-col space-y-2 text-center mt-12 absolute z-10 w-full"
         variants={{
           open: {
             clipPath: "inset(0% 0% 0% 0% round 10px)",
