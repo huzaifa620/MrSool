@@ -18,10 +18,14 @@ const Home = () => {
     };
     const [sum, setSum] = useState(0)
 
-    const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = useState([]);
 
-    const handleToggleExpand = () => {
-        setExpanded(!expanded);
+    const handleToggleExpand = (index) => {
+        setExpanded((prevExpanded) => {
+            const updatedExpanded = [...prevExpanded];
+            updatedExpanded[index] = !updatedExpanded[index];
+            return updatedExpanded;
+        });
     };
 
     useEffect(() => {
@@ -109,64 +113,55 @@ const Home = () => {
             <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded border-2 border-black h-full p-4 py-8 space-y-4'>
 
                 {
-                    data[index]?.restaurants.map((val, ind) => (
-                        
-                        <div className='flex border rounded-2xl bg-white space-x-4 p-4 w-full'>
-                            <div className='flex w-[20%] items-center'>
+                    data[index]?.restaurants.map((val, ind) => {
+                        const isExpanded = expanded[ind] || false;
+                        return (
+                            <div key={ind} className='flex border rounded-2xl bg-white space-x-4 p-4 w-full'>
+                                <div className='flex w-[20%] items-center'>
                                 <img src={val.imgUrl} alt='' className='w-32 h-32' />
-                            </div>
-                            <div className='w-full flex flex-col space-y-2 justify-center'>
-                                <p className='tracking-widest text-2xl font-bold'> {val.name} </p>
-                                <p> Nearby Riders </p>
+                                </div>
+                                <div className='w-full flex flex-col space-y-2 justify-center'>
+                                <p className='tracking-widest text-2xl font-bold'>{val.name}</p>
+                                <p>Nearby Riders</p>
                                 <div className='flex space-x-3 items-center'>
-
-                                    {expanded ? (
-                                        <div className='w-full flex flex-col space-y-2'>
-                                            {
-                                                val.ridersDetails.map((value, indx) => (
-
-                                                    <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
-                                                        <div className='w-[10%]'>
-                                                            <img src={car} alt='' className='w-12 h-12' />
-                                                        </div>
-                                                        <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> {value.name} </p>
-                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> Average Delivery Time : {value.time} mins </p>
-                                                            <p className='text-sm'> Expected Earning: {value.earning} SAR </p>
-                                                        </div>
-                                                    </div>
-
-                                                ))
-                                            }
-                                            <button onClick={handleToggleExpand}>Show Less</button>
+                                    {isExpanded ? (
+                                    <div className='w-full flex flex-col space-y-2'>
+                                        {val.ridersDetails.map((value, indx) => (
+                                        <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
+                                            <div className='w-[10%]'>
+                                            <img src={car} alt='' className='w-12 h-12' />
+                                            </div>
+                                            <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>{value.name}</p>
+                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>Average Delivery Time: {value.time} mins</p>
+                                            <p className='text-sm'>Expected Earning: {value.earning} SAR</p>
+                                            </div>
                                         </div>
+                                        ))}
+                                        <button onClick={() => handleToggleExpand(ind)}>Show Less</button>
+                                    </div>
                                     ) : (
-                                        <div className='w-full flex flex-col space-y-2'>
-                                            {
-                                                val.ridersDetails.slice(0, 2).map((value, indx) => (
-
-                                                    <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
-                                                        <div className='w-[10%]'>
-                                                            <img src={car} alt='' className='w-12 h-12' />
-                                                        </div>
-                                                        <div className='w-[90%] flex items-center justify-center space-x-4'>
-                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> {value.name} </p>
-                                                            <p className='border-r-2 border-slate-500 px-4 text-sm'> Average Delivery Time : {value.time} mins </p>
-                                                            <p className='text-sm'> Expected Earning: {value.earning} SAR </p>
-                                                        </div>
-                                                    </div>
-
-                                                ))
-                                            }
-                                            <button onClick={handleToggleExpand}>Show More</button>
+                                    <div className='w-full flex flex-col space-y-2'>
+                                        {val.ridersDetails.slice(0, 2).map((value, indx) => (
+                                        <div key={indx} className='flex border-4 rounded-md bg-white w-full px-4'>
+                                            <div className='w-[10%]'>
+                                            <img src={car} alt='' className='w-12 h-12' />
+                                            </div>
+                                            <div className='w-[90%] flex items-center justify-center space-x-4'>
+                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>{value.name}</p>
+                                            <p className='border-r-2 border-slate-500 px-4 text-sm'>Average Delivery Time: {value.time} mins</p>
+                                            <p className='text-sm'>Expected Earning: {value.earning} SAR</p>
+                                            </div>
                                         </div>
+                                        ))}
+                                        <button onClick={() => handleToggleExpand(ind)}>Show More</button>
+                                    </div>
                                     )}
-
+                                </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                    ))
+                        );
+                    })
                 }
 
             </div>
