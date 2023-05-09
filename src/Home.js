@@ -138,7 +138,7 @@ const Home = () => {
                                             </div>
                                         </div>
                                         ))}
-                                        <button onClick={() => handleToggleExpand(ind)}>Show Less</button>
+                                        { (index!=0) && <button onClick={() => handleToggleExpand(ind)}>Show Less</button> }
                                     </div>
                                     ) : (
                                     <div className='w-full flex flex-col space-y-2'>
@@ -154,7 +154,7 @@ const Home = () => {
                                             </div>
                                         </div>
                                         ))}
-                                        <button onClick={() => handleToggleExpand(ind)}>Show More</button>
+                                        { (index!=0) && <button onClick={() => handleToggleExpand(ind)}>Show More</button> }
                                     </div>
                                     )}
                                 </div>
