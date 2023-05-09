@@ -60,8 +60,8 @@ const Home = () => {
    
                 </div>
 
-                <div className='w-full h-full relative border-2 border-black rounded-2xl'>
-                    <img src={data[index].image} alt='' className='h-full rounded-2xl'/>
+                <div className='w-full relative border-2 border-black rounded-2xl h-[90%]'>
+                    <img src={data[index].image} alt='' className='w-full h-full object-contain rounded-2xl'/>
                     <div className='flex flex-col space-y-2 absolute inset-0 p-6 justify-end'>
                         <ZoomInIcon />
                         <ZoomOutIcon />
@@ -78,7 +78,7 @@ const Home = () => {
                 <div className='tracking-widest uppercase text-4xl font-semibold text-center'>
                     Rider Demand Forecaster
                 </div>
-                <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 h-full p-4 space-y-2 border-2 border-black rounded'>
+                <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 h-[90%] p-4 space-y-2 border-2 border-black rounded'>
 
                     {
                         data[index]?.restaurants.map((val, ind) => (

@@ -1,3 +1,4 @@
+import img0 from './R0.png'
 import img1 from './R1.png'
 import img2 from './R2.png'
 import img3 from './R3.png'
@@ -5,7 +6,7 @@ import spoon from './cutlery.png'
 
 const data = [
     {
-        image: img1,
+        image: img0,
         restaurants: [
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
