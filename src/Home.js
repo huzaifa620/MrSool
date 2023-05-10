@@ -11,7 +11,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const Home = () => {
 
-    const {index, setIndex, time, timeChange, count, setCount} = useContext(Context)
+    const {index, setIndex, time, timeChange, count, setCount, zoomLevel, setZoomLevel} = useContext(Context)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -27,7 +27,7 @@ const Home = () => {
         });
     };
 
-    const [zoomLevel, setZoomLevel] = useState(1);
+    
 
     const handleZoomIn = () => {
         setZoomLevel(zoomLevel + 0.1);
