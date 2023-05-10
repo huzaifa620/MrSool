@@ -10,7 +10,7 @@ const Header = () => {
             <p className='text-2xl underline decoration-mrsool-green underline-offset-8 decoration-4'> Demand Forecaster Dashboard </p>
         </div>
         <div className='w-1/3 flex items-center justify-center'>
-            <div className='bg-[#E10600] rounded-3xl px-4 py-1 cursor-pointer'>
+            <div className='bg-[#E10600] hover:bg-[#af0500] text-center items-center justify-center rounded-3xl px-4 py-1 cursor-pointer'>
                 Logout
             </div>
         </div>
