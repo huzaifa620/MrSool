@@ -109,7 +109,7 @@ const Home = () => {
                                     <p className='tracking-widest text-xl font-bold'> {val.name} </p>
                                     <div className='flex space-x-3 items-center'>
                                         <img src={car} alt='' className='w-6 h-6' />
-                                        <p className=''> Riders required : {Math.max(val.riders - count, 0)} ( {val.riders&&(Math.max(val.riders - count, 0) / (data[index].sum - data[index].restaurants.length*count) * 100).toFixed(1)} %) </p>
+                                        <p className=''> Riders required : {Math.max(val.riders - count, 0)} ({ (Math.max(val.riders - count, 0) === 0) ? 0 : val.riders&&(Math.max(val.riders - count, 0) / (data[index].sum - data[index].restaurants.length*count) * 100).toFixed(1)} %) </p>
                                     </div>
                                 </div>
                             </div>

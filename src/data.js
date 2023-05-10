@@ -33,7 +33,7 @@ const data = [
             },
             {
                 name: "Yasmin Mall",
-                riders: 3, 
+                riders: 3,
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
@@ -91,7 +91,7 @@ const data = [
                 imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
             },
             {
-                name: "Asian Food Restaurant",
+                name: "Mamma's Biryani",
                 riders: 4,
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
@@ -100,10 +100,82 @@ const data = [
                     { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
                     { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
                 ],
-                imgUrl: 'https://img.freepik.com/premium-vector/fire-wok-asian-food-restaurant-logo_497517-604.jpg?w=2000'
+                imgUrl: 'https://hsaa.hsobjects.com/h/restaurants/logos/000/016/881/86921d5301c0edbfd6e66ff11b5c4b81-original.jpg'
+            },
+            {
+                name: "Hardee's",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://assets.stickpng.com/images/614479165953a50004ee16c6.png'
+            },
+            {
+                name: "Shehata Cold",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://media.licdn.com/dms/image/C4E0BAQFHu-WhOMUAIw/company-logo_200_200/0/1612626844750?e=2147483647&v=beta&t=k1IpLleErdiRM43OaQw460kp-j_T9dZdNLQfqNaaM3A'
+            },
+            {
+                name: "Outback Steakhouse",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://i.pinimg.com/736x/e7/21/a2/e721a26ffeabf428b217739b6a9e1563.jpg'
+            },
+            {
+                name: "Starbucks",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/800px-Starbucks_Corporation_Logo_2011.svg.png'
+            },
+            {
+                name: "Gloria Jean's Coffees",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://www.casuarinasquare.com.au/wp-content/uploads/2022/03/logo-gloria-jeans-1.jpg'
+            },
+            {
+                name: "Barn's Coffee",
+                riders: 4,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://barns.com.sa/public/assets/store/themes/ecomm/images/Logo_green.png'
             }
         ],
-        sum: 33
+        sum: 57
     },
 
     {
@@ -143,6 +215,30 @@ const data = [
                 imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxoprno9xjr_va3qkqnt5xptcAeYSKF16nle4Sr-IvHO_YdC4c5X26wv56YGQm_76mYE&usqp=CAU" 
             },
             {
+                name: "Starbucks",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/800px-Starbucks_Corporation_Logo_2011.svg.png'
+            },
+            {
+                name: "Gloria Jean's Coffees",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://www.casuarinasquare.com.au/wp-content/uploads/2022/03/logo-gloria-jeans-1.jpg'
+            },
+            {
                 name: "Sultan Restaurant", 
                 riders: 5, 
                 ridersDetails: [
@@ -179,7 +275,7 @@ const data = [
                 imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
             }
         ],
-        sum: 56
+        sum: 66
     },
 
     {
@@ -250,9 +346,45 @@ const data = [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                 ],
                 imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
-            }
+            },
+            {
+                name: "Barn's Coffee",
+                riders: 9,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://barns.com.sa/public/assets/store/themes/ecomm/images/Logo_green.png'
+            },
+            {
+                name: "Starbucks",
+                riders: 25,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/800px-Starbucks_Corporation_Logo_2011.svg.png'
+            },
+            {
+                name: "Gloria Jean's Coffees",
+                riders: 11,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://www.casuarinasquare.com.au/wp-content/uploads/2022/03/logo-gloria-jeans-1.jpg'
+            },
         ],
-        sum: 84
+        sum: 129
     },
 ]
 
