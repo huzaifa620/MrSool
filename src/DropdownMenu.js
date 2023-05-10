@@ -20,7 +20,7 @@ export default function App() {
       animate={isOpen ? "open" : "closed"}
       className="flex flex-col w-1/5 space-y-14 relative"
     >
-      <motion.button className="border rounded-[10px] p-2 font-bold cursor-pointer w-full text-left flex justify-between items-center px-4 bg-slate-300 shadow-md" whileTap={{ scale: 0.97 }} onClick={() => setIsOpen(!isOpen)}>
+      <motion.button className="border rounded-[10px] p-2 font-bold cursor-pointer w-full text-left flex justify-between items-center px-4 bg-mrsool-green text-white tracking-widest shadow-md" whileTap={{ scale: 0.97 }} onClick={() => setIsOpen(!isOpen)}>
         {time}
 
         <motion.div
@@ -32,13 +32,13 @@ export default function App() {
           style={{ originY: 0.55 }}
         >
           <svg width="15" height="15" viewBox="0 0 20 20">
-            <path d="M0 7 L 20 7 L 10 16" />
+            <path d="M0 7 L 20 7 L 10 16" fill="white" />
           </svg>
         </motion.div>
 
       </motion.button>
       
-      <motion.ul className="bg-slate-300 p-2 flex flex-col space-y-2 text-center mt-12 absolute z-10 w-full"
+      <motion.ul className="bg-mrsool-green text-white p-2 flex flex-col space-y-2 text-center mt-12 absolute z-10 w-full"
         variants={{
           open: {
             clipPath: "inset(0% 0% 0% 0% round 10px)",

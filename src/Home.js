@@ -72,7 +72,7 @@ const Home = () => {
                     <p className='w-[70%] text-4xl'>Delivery Demand Forecaster</p>
                     
                     <div className=''>
-                        <DatePicker className='border bg-slate-300 py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-[240px]' selected={selectedDate} onChange={handleDateChange} />
+                        <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-10 ease-out' selected={selectedDate} onChange={handleDateChange} />
                     </div>
                     <Menu />
    
