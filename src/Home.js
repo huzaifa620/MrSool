@@ -88,7 +88,7 @@ const Home = () => {
                 </div>
 
                 <div className='text-xl text-red-500'>
-                    Red Circles depicting the restaurants where demand is forcasted with high probability
+                    Blue Circles depicting the restaurants where demand is forcasted with high probability
                 </div>
             </div>
 

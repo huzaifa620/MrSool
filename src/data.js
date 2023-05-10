@@ -111,7 +111,7 @@ const data = [
         restaurants: [
             {
                 name: "Asian Food Restaurant",
-                riders: 4,
+                riders: 14,
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
@@ -122,7 +122,7 @@ const data = [
             },
             {
                 name: "Yasmin Mall",
-                riders: 2, 
+                riders: 12, 
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 0 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 0 },
@@ -171,14 +171,15 @@ const data = [
             },
             {
                 name: "Asmahan Restaurant", 
-                riders: 2, 
+                riders: 12, 
                 ridersDetails:[
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
                 ],
-                imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"}
+                imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
+            }
         ],
-        sum: 26
+        sum: 56
     },
 
     {
@@ -186,7 +187,7 @@ const data = [
         restaurants: [
             {
                 name: "Asian Food Restaurant",
-                riders: 4,
+                riders: 14,
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
@@ -197,7 +198,7 @@ const data = [
             },
             {
                 name: "Yasmin Mall",
-                riders: 3, 
+                riders: 13, 
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
@@ -207,7 +208,7 @@ const data = [
             },
             {
                 name: "McDonald' ALSAMER",
-                riders: 2, 
+                riders: 12, 
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 0 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 }
@@ -216,7 +217,7 @@ const data = [
             },
             {
                 name: "Sultan Restaurant", 
-                riders: 5, 
+                riders: 15, 
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
@@ -228,7 +229,7 @@ const data = [
             },
             {
                 name: "Shrimp Shack", 
-                riders: 7, 
+                riders: 17, 
                 ridersDetails: [
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
@@ -242,7 +243,7 @@ const data = [
             },
             {
                 name: "Asmahan Restaurant", 
-                riders: 3, 
+                riders: 13, 
                 ridersDetails:[
                     { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
                     { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
@@ -251,7 +252,7 @@ const data = [
                 imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
             }
         ],
-        sum: 24
+        sum: 84
     },
 ]
 
