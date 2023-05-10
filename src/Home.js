@@ -57,19 +57,19 @@ const Home = () => {
       }, [time]);
 
   return (
-    <div className='flex flex-col items-center w-full h-screen space-y-24 p-2 pt-[5%]'>
+    <div className='flex flex-col items-center w-full h-screen space-y-8 md:space-y-24 p-2 pt-[10%] md:pt-[6%]'>
 
-        <div className='flex flex-col items-center justify-center w-[70%] space-y-8'>
-            <h2 className='text-5xl font-bold tracking-widest'> Demand Forecaster </h2>
-            <p className='text-center'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
+        <div className='flex flex-col items-center justify-center w-full md:w-[70%] space-y-4 md:space-y-8'>
+            <h2 className='text-3xl md:text-5xl font-bold tracking-widest'> Demand Forecaster </h2>
+            <p className='text-justify md:text-center'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
-        <div className='flex items-start justify-center space-x-12 h-[80%] px-4'>
+        <div className='flex flex-col md:flex-row w-full items-center md:items-start justify-center space-x-12 md:h-[80%] px-1 md:px-4 space-y-8 md:space-y-0'>
 
-            <div className='flex flex-col justify-center w-[65%] h-full space-y-4'>
+            <div className='flex flex-col justify-center w-full md:w-[65%] h-full space-y-4'>
 
-                <div className='flex w-full items-center tracking-widest uppercase font-semibold justify-around space-x-2'>
-                    <p className='w-[70%] text-4xl'>Delivery Demand Forecaster</p>
+                <div className='flex flex-col md:flex-row w-full items-center tracking-widest uppercase font-semibold justify-around md:space-x-2 space-y-4 md:space-y-0'>
+                    <p className='w-full md:w-[70%] uppercase text-2xl md:text-4xl font-semibold text-center md:text-left'>Delivery Demand Forecaster</p>
                     
                     <div className=''>
                         <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
@@ -87,13 +87,13 @@ const Home = () => {
 
                 </div>
 
-                <div className='text-xl text-red-500'>
+                <div className='md:text-xl text-center md:text-left text-red-500'>
                     Blue Circles depicting the restaurants where demand is forcasted with high probability
                 </div>
             </div>
 
-            <div className='flex flex-col justify-center w-[35%] h-full space-y-4'>
-                <div className='tracking-widest uppercase text-4xl font-semibold text-center'>
+            <div className='flex flex-col justify-center w-full md:w-[35%] h-full space-y-4'>
+                <div className='uppercase text-xl md:text-4xl font-semibold text-center'>
                     Rider Demand Forecaster
                 </div>
                 <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 h-[90%] p-4 space-y-2 border-2 border-black rounded-md'>
@@ -123,8 +123,8 @@ const Home = () => {
 
         </div>
 
-        <div className='flex flex-col w-1/2 h-[80%] space-y-4 pb-24'>
-            <div className='tracking-widest uppercase text-4xl font-semibold'>
+        <div className='flex flex-col w-full md:w-1/2 h-[80%] space-y-4 pb-24'>
+            <div className='md:tracking-widest uppercase text-xl md:text-4xl font-semibold'>
                 Optimized Delivery Scheduler
             </div>
             <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded border-2 border-black h-full p-4 py-8 space-y-4'>
