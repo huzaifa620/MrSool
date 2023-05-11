@@ -18,7 +18,7 @@ export default function App() {
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
-      className="flex flex-col w-1/2 md:w-1/5 space-y-14 relative"
+      className="flex flex-col w-1/2 md:w-1/3 lg:w-1/5 space-y-14 relative"
     >
       <motion.button className="border rounded-[10px] p-2 font-bold cursor-pointer w-full text-left flex justify-between items-center px-4 bg-mrsool-green text-white tracking-widest shadow-md active:bg-white transition-colors duration-500 ease-out" whileTap={{ scale: 0.97 }} onClick={() => setIsOpen(!isOpen)}>
         {time}

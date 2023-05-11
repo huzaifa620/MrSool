@@ -57,19 +57,19 @@ const Home = () => {
       }, [time]);
 
   return (
-    <div className='flex flex-col items-center w-full h-screen space-y-8 md:space-y-24 p-2 pt-[10%] md:pt-[6%]'>
+    <div className='flex flex-col items-center w-full h-screen space-y-8 lg:space-y-24 p-2 pt-[10%] lg:pt-[6%]'>
 
-        <div className='flex flex-col items-center justify-center w-full md:w-[70%] space-y-4 md:space-y-8'>
+        <div className='flex flex-col items-center justify-center w-full lg:w-[70%] space-y-4 lg:space-y-8'>
             <h2 className='text-3xl md:text-5xl font-bold tracking-widest'> Demand Forecaster </h2>
-            <p className='text-justify md:text-center text-sm'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
+            <p className='text-justify lg:text-center text-sm'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
-        <div className='flex flex-col md:flex-row w-full items-center md:items-start justify-center md:space-x-12 md:h-[80%] px-1 md:px-4 space-y-8 md:space-y-0'>
+        <div className='flex flex-col lg:flex-row w-full items-center lg:items-start justify-center lg:space-x-12 lg:h-[80%] px-1 lg:px-4 space-y-8 lg:space-y-0'>
 
-            <div className='flex flex-col justify-center w-full md:w-[65%] h-full space-y-4'>
+            <div className='flex flex-col justify-center w-full lg:w-[65%] h-full space-y-4'>
 
-                <div className='flex flex-col md:flex-row w-full items-center tracking-widest uppercase font-semibold justify-around md:space-x-2 space-y-4 md:space-y-0'>
-                    <p className='w-full md:w-[70%] uppercase text-2xl md:text-4xl font-semibold text-center md:text-left'>Delivery Demand Forecaster</p>
+                <div className='flex flex-col lg:flex-row w-full items-center tracking-widest uppercase font-semibold justify-around lg:space-x-2 space-y-4 lg:space-y-0'>
+                    <p className='w-full lg:w-[70%] uppercase text-2xl md:text-4xl font-semibold text-center lg:text-left'>Delivery Demand Forecaster</p>
                     
                     <div className=''>
                         <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
@@ -87,29 +87,29 @@ const Home = () => {
 
                 </div>
 
-                <div className='md:text-xl text-center md:text-left text-red-500'>
+                <div className='lg:text-xl text-center lg:text-left text-red-500'>
                     Blue Circles depicting the restaurants where demand is forcasted with high probability
                 </div>
             </div>
 
-            <div className='flex flex-col md:justify-center w-full md:w-[35%] h-full space-y-4'>
+            <div className='flex flex-col lg:justify-center md:items-center w-full lg:w-[35%] lg:h-full space-y-4'>
                 <div className='uppercase text-xl md:text-4xl font-semibold text-center'>
                     Rider Demand Forecaster
                 </div>
-                <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 md:h-[90%] p-2 md:p-4 space-y-2 border-2 border-black rounded-md'>
+                <div className='bg-mrsool-green w-3/4 lg:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 lg:h-[90%] p-2 md:p-4 space-y-2 border-2 border-black rounded-md'>
 
                     {
                         data[index]?.restaurants.map((val, ind) => (
 
-                            <div key={ind} className='flex border rounded-xl bg-white space-x-4 p-1 md:p-4 w-full'>
-                                <div className='w-[20%]'>
+                            <div key={ind} className='flex border rounded-xl bg-white space-x-4 p-1 lg:p-4 w-full'>
+                                <div className='w-[20%] flex items-center justify-center'>
                                     <img src={val.imgUrl} alt='' className='w-16 h-16 scale-75 md:scale-100' />
                                 </div>
-                                <div className='w-[80%] md:w-full flex flex-col space-y-2 justify-center'>
+                                <div className='w-[80%] lg:w-full flex flex-col space-y-2 justify-center'>
                                     <p className='tracking-widest md:text-xl font-bold'> {val.name} </p>
                                     <div className='flex space-x-3 items-center'>
                                         <img src={car} alt='' className='w-6 h-6' />
-                                        <p className='text-sm'> Riders required : {Math.max(val.riders - count, 0)} ({ (Math.max(val.riders - count, 0) === 0) ? '<0.1' : Math.min(Math.max((val.riders - count) / (data[index].sum - (data[index].restaurants.length * count)) * 100, 0), 100).toFixed(1)} %) </p>
+                                        <p className='text-sm md:text-lg'> Riders required : {Math.max(val.riders - count, 0)} ({ (Math.max(val.riders - count, 0) === 0) ? '<0.1' : Math.min(Math.max((val.riders - count) / (data[index].sum - (data[index].restaurants.length * count)) * 100, 0), 100).toFixed(1)} %) </p>
                                     </div>
                                 </div>
                             </div>
@@ -123,35 +123,35 @@ const Home = () => {
 
         </div>
 
-        <div className='flex flex-col w-full md:w-1/2 h-[80%] space-y-4 pb-24'>
-            <div className='md:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center md:text-left'>
+        <div className='flex flex-col w-full lg:w-1/2 h-[80%] space-y-4 pb-24'>
+            <div className='lg:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center lg:text-left'>
                 Optimized Delivery Scheduler
             </div>
-            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded border-2 border-black h-full p-1 md:p-4 py-8 space-y-4'>
+            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded border-2 border-black h-full p-1 lg:p-4 py-8 space-y-4'>
 
                 {
                     data[index]?.restaurants.map((val, ind) => {
                         const isExpanded = expanded[ind] || false;
                         return (
-                            <div key={ind} className='flex border rounded-2xl bg-white md:space-x-4 p-1 md:p-4 w-full'>
-                                <div className='hidden md:flex w-[20%] items-center'>
+                            <div key={ind} className='flex border rounded-2xl bg-white lg:space-x-4 p-1 lg:p-4 w-full'>
+                                <div className='hidden md:flex w-[20%] md:scale-75 lg:scale-100 items-center'>
                                     <img src={val.imgUrl} alt='' className='w-32 h-32' />
                                 </div>
                                 <div className='w-full flex flex-col space-y-2 justify-center'>
-                                    <p className='tracking-widest text-xl md:text-2xl font-bold text-center md:text-left'>{val.name}</p>
+                                    <p className='tracking-widest text-xl md:text-2xl font-bold text-center lg:text-left'>{val.name}</p>
                                     <p>Nearby Riders</p>
                                     <div className='flex space-x-3 items-center'>
                                         {isExpanded ? (
                                             <div className='w-full flex flex-col space-y-2'>
                                                 {val.ridersDetails.map((value, indx) => (
-                                                    <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 md:px-4'>
+                                                    <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 lg:px-4'>
                                                         <div className='w-full md:w-[10%]'>
                                                             <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
                                                         </div>
-                                                        <div className='w-full md:w-[90%] flex items-center justify-center space-x-1 md:space-x-4 text-center md:text-left'>
-                                                            <p className='border-r-2 border-slate-500 px-1 md:px-4 text-xs md:text-sm'>{value.name}</p>
-                                                            <p className='border-r-2 border-slate-500 px-1 md:px-4 text-xs md:text-sm'>Average Delivery Time: {value.time} mins</p>
-                                                            <p className='text-xs md:text-sm'>Expected Earning: {value.earning} SAR</p>
+                                                        <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center lg:text-left'>
+                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm'>{value.name}</p>
+                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm'>Average Delivery Time: {value.time} mins</p>
+                                                            <p className='text-xs lg:text-sm'>Expected Earning: {value.earning} SAR</p>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -160,14 +160,14 @@ const Home = () => {
                                         ) : (
                                             <div className='w-full flex flex-col space-y-2'>
                                                 {val.ridersDetails.slice(0, 2).map((value, indx) => (
-                                                    <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 md:px-4'>
+                                                    <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 lg:px-4'>
                                                         <div className='w-full md:w-[10%]'>
                                                             <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
                                                         </div>
-                                                        <div className='w-full md:w-[90%] flex items-center justify-center space-x-1 md:space-x-4 text-center md:text-left'>
-                                                            <p className='border-r-2 border-slate-500 px-1 md:px-4 text-xs md:text-sm'>{value.name}</p>
-                                                            <p className='border-r-2 border-slate-500 px-1 md:px-4 text-xs md:text-sm'>Average Delivery Time: {value.time} mins</p>
-                                                            <p className='text-xs md:text-sm'>Expected Earning: {value.earning} SAR</p>
+                                                        <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center lg:text-left'>
+                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm'>{value.name}</p>
+                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm'>Average Delivery Time: {value.time} mins</p>
+                                                            <p className='text-xs lg:text-sm'>Expected Earning: {value.earning} SAR</p>
                                                         </div>
                                                     </div>
                                                 ))}
