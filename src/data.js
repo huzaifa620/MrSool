@@ -112,7 +112,7 @@ const data = [
                     { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
                     { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
                 ],
-                imgUrl: 'https://assets.stickpng.com/images/614479165953a50004ee16c6.png'
+                imgUrl: 'https://seeklogo.com/images/H/Hardee_s-logo-A40E6409AB-seeklogo.com.png'
             },
             {
                 name: "Shehata Cold",
