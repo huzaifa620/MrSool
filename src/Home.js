@@ -151,7 +151,7 @@ const Home = () => {
                                                         <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center xl:text-left'>
                                                             <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>{value.name}</p>
                                                             <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>Average Delivery Time: {value.time} mins</p>
-                                                            <p className='text-xs xl:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
+                                                            <p className='text-xs md:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -167,7 +167,7 @@ const Home = () => {
                                                         <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center xl:text-left'>
                                                             <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>{value.name}</p>
                                                             <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>Average Delivery Time: {value.time} mins</p>
-                                                            <p className='text-xs xl:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
+                                                            <p className='text-xs md:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
                                                         </div>
                                                     </div>
                                                 ))}
