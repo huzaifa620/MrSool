@@ -7,7 +7,7 @@ const Header = () => {
             <img src='https://mrsool.co/images/Mrsool-Logo-v2.png' alt='' />
         </div>
         <div className='cursor-pointer w-1/3 hidden md:flex items-center justify-center'>
-            <p className='text-lg lg:text-2xl underline decoration-mrsool-green underline-offset-8 decoration-4'> Demand Forecaster Dashboard </p>
+            <p className='text-lg lg:text-xl xl:text-2xl underline decoration-mrsool-green underline-offset-8 decoration-4'> Demand Forecaster Dashboard </p>
         </div>
         <div className='w-1/3 flex items-center justify-center'>
             <div className='bg-[#E10600] hover:bg-[#af0500] text-center items-center justify-center rounded-3xl px-4 py-1 cursor-pointer text-xs md:text-base'>
