@@ -1,13 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react'
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
-import bike from './delivery-bike.png'
-import car from './car.png'
+import bike from './motorbike.png'
+import car from './suv.png'
 import Menu from './DropdownMenu'
 import { Context } from './Context';
 import data from './data.js'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const Home = () => {
 
@@ -60,11 +62,11 @@ const Home = () => {
     <div className='flex flex-col items-center w-full h-screen space-y-8 xl:space-y-24 p-2 pt-[10%] xl:pt-[6%]'>
 
         <div className='flex flex-col items-center justify-center w-full md:w-[90%] xl:w-[70%] space-y-4 xl:space-y-8'>
-            <h2 className='text-3xl md:text-5xl font-bold tracking-widest'> Demand Forecaster </h2>
-            <p className='text-justify md:text-center text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
+            <h2 className='text-3xl md:text-5xl font-bold tracking-widest uppercase'> Demand Forecaster </h2>
+            <p className='text-justify text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
-        <div className='flex flex-col xl:flex-row w-full items-center xl:items-start justify-center xl:space-x-12 xl:h-[80%] px-1 xl:px-4 space-y-8 xl:space-y-0'>
+        <div className='flex flex-col xl:flex-row w-full items-center xl:items-start justify-center xl:space-x-12 xl:h-[80%] px-1 xl:px-8 space-y-8 xl:space-y-0'>
 
             <div className='flex flex-col justify-center w-full xl:w-[65%] h-full space-y-4'>
 
@@ -80,16 +82,16 @@ const Home = () => {
 
                 <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
                     <img src={data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
-                    <div className='flex flex-col space-y-2 absolute inset-0 p-6 justify-end'>
-                        <ZoomInIcon onClick={handleZoomIn} />
-                        <ZoomOutIcon onClick={handleZoomOut} />
+                    <div className='flex flex-col items-center space-y-2 absolute bottom-4 left-4 px-0.5 py-0.5 bg-white h-fit w-fit rounded-lg'>
+                        <AddIcon onClick={handleZoomIn} className='hover:bg-gray-200' />
+                        <div className='h-0.5 w-full bg-gray-400'></div>
+                        <RemoveIcon onClick={handleZoomOut} className='hover:bg-gray-200' />
+                        {/* <ZoomInIcon onClick={handleZoomIn} />
+                        <ZoomOutIcon onClick={handleZoomOut} /> */}
                     </div>
 
                 </div>
 
-                <div className='xl:text-xl text-center xl:text-left text-red-500'>
-                    Blue Circles depicting the restaurants where demand is forcasted with high probability
-                </div>
             </div>
 
             <div className='flex flex-col xl:justify-center md:items-center w-full xl:w-[35%] xl:h-full space-y-4'>
@@ -118,7 +120,6 @@ const Home = () => {
                     }
 
                 </div>
-                <div className='text-xl text-white select-none'>-</div>
             </div>
 
         </div>
