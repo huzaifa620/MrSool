@@ -10,6 +10,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Form from './Form';
 
 const Home = () => {
 
@@ -82,6 +83,9 @@ const Home = () => {
 
                 <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
                     <img src={data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
+
+                    <Form />
+
                     <div className='flex flex-col items-center space-y-2 absolute bottom-4 left-4 px-0.5 py-0.5 bg-white h-fit w-fit rounded-lg'>
                         <AddIcon onClick={handleZoomIn} className='hover:bg-gray-200' />
                         <div className='h-0.5 w-full bg-gray-400'></div>
