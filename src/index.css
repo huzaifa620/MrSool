@@ -35,6 +35,15 @@ body {
     border-radius: 16px;
 } */
 
+.css-b3dvpx-MuiStack-root>.MuiTextField-root {
+    min-width: auto !important;
+}
+
+.MuiStack-root.css-b3dvpx-MuiStack-root {
+    min-width: auto !important;
+    width: 100% !important;
+}
+
 .MuiInputBase-root.MuiOutlinedInput-root > input {
     font-size: large;
     font-weight: bold;

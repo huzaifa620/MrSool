@@ -97,13 +97,13 @@ const Home = () => {
             <div className='flex flex-col justify-center w-full xl:w-[65%] h-full space-y-4'>
 
                 <div className='flex flex-col xl:flex-row w-full items-center tracking-widest uppercase font-semibold justify-around xl:space-x-2 space-y-4 xl:space-y-0'>
-                    <p className='w-full xl:w-[70%] uppercase text-2xl md:text-4xl font-semibold text-center xl:text-left'>Delivery Demand Forecaster</p>
+                    <p className='w-full xl:w-[70%] uppercase text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center xl:text-left'>Delivery Demand Forecaster</p>
                     
                     {/* <div className=''>
                         <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
                     </div>
                     <Menu /> */}
-                    <div className='flex w-fit'>
+                    <div className='flex w-[27.5%] 2xl:w-[20%] 2xl:scale-100'>
                         <DateTimePicker />
                     </div>
    
@@ -125,7 +125,7 @@ const Home = () => {
             </div>
 
             <div className='flex flex-col xl:justify-center md:items-center w-full xl:w-[35%] xl:h-full space-y-4'>
-                <div className='uppercase text-xl md:text-4xl font-semibold text-center'>
+                <div className='uppercase text-xl 2xl:text-4xl font-semibold text-center'>
                     Rider Demand Forecaster
                 </div>
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 border-2 border-black rounded-md'>
