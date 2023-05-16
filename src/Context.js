@@ -20,7 +20,8 @@ const StateProvider = ({ children }) => {
     const [index, setIndex] = useState(0)
     const [count, setCount] = useState(0)
     const [zoomLevel, setZoomLevel] = useState(1);
-    const [country, setCountry] = React.useState('Country')
+    const [country, setCountry] = useState('Country')
+    const [city, setCity] = useState('City')
 
     const timeChange = (event) => {
         setIsOpen(false)
@@ -30,7 +31,7 @@ const StateProvider = ({ children }) => {
     }
 
     return (
-        <Context.Provider value={{ time, setTime, timeChange, isOpen, setIsOpen, index, setIndex, count, setCount, zoomLevel, setZoomLevel, country, setCountry }}>
+        <Context.Provider value={{ time, setTime, timeChange, isOpen, setIsOpen, index, setIndex, count, setCount, zoomLevel, setZoomLevel, country, setCountry, city, setCity }}>
             {children}
         </Context.Provider>
     );

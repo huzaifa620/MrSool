@@ -1,9 +1,68 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Context } from './Context';
 
 const Form = () => {
 
-  const {country, setCountry}  = useContext(Context)
+  const {country, setCountry, city, setCity, index, setIndex}  = useContext(Context)
+
+  const cityChange = () => {
+    setCity(document.querySelector('#search-dropdown').value)
+  }
+
+  useEffect(() => {
+    switch (country) {
+        case 'KSA':
+            switch (city) {
+                case 'jeddah':
+                    setIndex(4)
+                    break
+                case 'mecca':
+                    setIndex(5)
+                    break
+                default:
+                    break;
+            }
+            break
+        case 'UAE':
+            switch (city) {
+                case 'dubai':
+                    setIndex(6)
+                    break
+                case 'abudhabi':
+                    setIndex(7)
+                    break
+                default:
+                    break;
+            }
+            break
+        case 'QAT':
+            switch (city) {
+                case 'doha':
+                    setIndex(8)
+                    break
+                case 'dukhan':
+                    setIndex(9)
+                    break
+                default:
+                    break;
+            }
+            break
+        case 'EGY':
+            switch (city) {
+                case 'cairo':
+                    setIndex(10)
+                    break
+                case 'alexandria':
+                    setIndex(11)
+                    break
+                default:
+                    break;
+            }
+            break
+        default:
+            break;
+    }
+  }, [city, country])
 
   return (
 
@@ -32,9 +91,9 @@ const Form = () => {
             </div>
             <div className="relative w-full">
 
-                <input type="search" id="search-dropdown" className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-mrsool-green focus:border-mrsool-green" placeholder="Search for city" required />
+                <input type="search" id="search-dropdown" className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-mrsool-green focus:border-mrsool-green" placeholder="Search for city" required disabled={country==='Country'} />
 
-                <button type="submit" className="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-mrsool-green rounded-r-lg border border-green-600 hover:bg-mrsool-green-hover focus:outline-none">
+                <button id='city' onClick={cityChange} className="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-mrsool-green rounded-r-lg border border-green-600 hover:bg-mrsool-green-hover focus:outline-none">
                     <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     <span className="sr-only">Search</span>
                 </button>

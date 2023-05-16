@@ -18,7 +18,7 @@ import EGY from './EGY.png'
 
 const Home = () => {
 
-    const {index, setIndex, time, timeChange, count, setCount, zoomLevel, setZoomLevel, country, setCountry} = useContext(Context)
+    const {index, setIndex, time, setTime, timeChange, count, setCount, zoomLevel, setZoomLevel, country, setCountry, city, setCity} = useContext(Context)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -52,6 +52,8 @@ const Home = () => {
 
     useEffect(() => {
 
+        setIndex(0)
+        document.querySelector('#search-dropdown').value = ''
         switch (country) {
             case 'KSA':
                 setZeroIndImg(KSA)
@@ -68,16 +70,19 @@ const Home = () => {
             default:
                 break;
         }
+    }, [country]);
 
-        if (time === ' 08am - 10am ') {
-          setIndex(1);
-        } else if (time === ' 02pm - 04pm ') {
-          setIndex(2);
-        } else if (time === ' 09pm - 11pm ') {
-          setIndex(3);
+    useEffect(() => {
+        if (city !== 'City') {
+            if (time === 8) {
+                setIndex(1);
+            } else if (time === 2) {
+                setIndex(2);
+            } else if (time === 11) {
+                setIndex(3);
+            }
         }
-        
-      }, [time, country]);
+    }, [time])
 
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-8 xl:space-y-24 p-2 pt-[10%] xl:pt-[6%]'>
