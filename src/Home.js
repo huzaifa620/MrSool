@@ -1,6 +1,4 @@
 import React, { useState, useContext, useEffect } from 'react'
-import ZoomInIcon from '@mui/icons-material/ZoomIn';
-import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 import bike from './motorbike.png'
 import car from './suv.png'
 import Menu from './DropdownMenu'
@@ -12,15 +10,21 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Form from './Form';
 
+import ALL from './all.png'
+import KSA from './KSA.jpg'
+import QAT from './QAT.png'
+import UAE from './UAE.png'
+import EGY from './EGY.png'
+
 const Home = () => {
 
-    const {index, setIndex, time, timeChange, count, setCount, zoomLevel, setZoomLevel} = useContext(Context)
+    const {index, setIndex, time, timeChange, count, setCount, zoomLevel, setZoomLevel, country, setCountry} = useContext(Context)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
     const [imgSrc, setImgSrc ] = useState([bike, car]);
-
+    const [zeroIndImg, setZeroIndImg] = useState(ALL)
     const [expanded, setExpanded] = useState([]);
     const handleToggleExpand = (index) => {
         setExpanded((prevExpanded) => {
@@ -29,8 +33,6 @@ const Home = () => {
             return updatedExpanded;
         });
     };
-
-    
 
     const handleZoomIn = () => {
         setZoomLevel(zoomLevel + 0.1);
@@ -49,6 +51,24 @@ const Home = () => {
     };
 
     useEffect(() => {
+
+        switch (country) {
+            case 'KSA':
+                setZeroIndImg(KSA)
+                break;
+            case 'UAE':
+                setZeroIndImg(UAE)
+                break;
+            case 'QAT':
+                setZeroIndImg(QAT)
+                break;
+            case 'EGY':
+                setZeroIndImg(EGY)
+                break;
+            default:
+                break;
+        }
+
         if (time === ' 08am - 10am ') {
           setIndex(1);
         } else if (time === ' 02pm - 04pm ') {
@@ -57,7 +77,7 @@ const Home = () => {
           setIndex(3);
         }
         
-      }, [time]);
+      }, [time, country]);
 
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-8 xl:space-y-24 p-2 pt-[10%] xl:pt-[6%]'>
@@ -82,7 +102,7 @@ const Home = () => {
                 </div>
 
                 <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
-                    <img src={data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
+                    <img src={index === 0 ? zeroIndImg : data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
 
                     <Form />
 
@@ -90,8 +110,6 @@ const Home = () => {
                         <AddIcon onClick={handleZoomIn} className='hover:bg-gray-200' />
                         <div className='h-0.5 w-full bg-gray-400'></div>
                         <RemoveIcon onClick={handleZoomOut} className='hover:bg-gray-200' />
-                        {/* <ZoomInIcon onClick={handleZoomIn} />
-                        <ZoomOutIcon onClick={handleZoomOut} /> */}
                     </div>
 
                 </div>

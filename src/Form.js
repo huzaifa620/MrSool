@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { Context } from './Context';
 
 const Form = () => {
 
-    const [country, setCountry] = React.useState('Country')
+  const {country, setCountry}  = useContext(Context)
 
   return (
 
-    <form className='w-[40%] absolute top-4 left-4'>
+    <div className='w-[40%] absolute top-4 left-4'>
         <div className="flex">
             <label htmlFor="search-dropdown" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
 
@@ -39,7 +40,7 @@ const Form = () => {
                 </button>
             </div>
         </div>
-    </form>
+    </div>
 
   )
 }
