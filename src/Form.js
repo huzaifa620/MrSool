@@ -14,7 +14,7 @@ const Form = () => {
 
             <div id="dropdown" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 w-1/4">
 
-                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200 flex flex-col items-center justify-center w-full" aria-labelledby="dropdown-button">
+                <ul className="py-2 text-sm text-black flex flex-col items-center justify-center w-full" aria-labelledby="dropdown-button">
                     <li className='w-full'>
                         <button type="button" onClick={() => {setCountry('KSA')}} className="inline-flex w-full items-center justify-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Saudi Arabia</button>
                     </li>
