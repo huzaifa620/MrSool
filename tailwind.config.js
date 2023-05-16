@@ -11,6 +11,7 @@ module.exports = {
       },
       colors: {
         'mrsool-green': '#00BF6F',
+        'mrsool-green-hover': '#039256'
       },
     },
   },
