@@ -9,7 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Form from './Form';
-
+import DateTimePicker from './DateTimePicker';
 import ALL from './all.png'
 import KSA from './KSA.jpg'
 import QAT from './QAT.png'
@@ -94,10 +94,13 @@ const Home = () => {
                 <div className='flex flex-col xl:flex-row w-full items-center tracking-widest uppercase font-semibold justify-around xl:space-x-2 space-y-4 xl:space-y-0'>
                     <p className='w-full xl:w-[70%] uppercase text-2xl md:text-4xl font-semibold text-center xl:text-left'>Delivery Demand Forecaster</p>
                     
-                    <div className=''>
+                    {/* <div className=''>
                         <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
                     </div>
-                    <Menu />
+                    <Menu /> */}
+                    <div className='flex w-fit'>
+                        <DateTimePicker />
+                    </div>
    
                 </div>
 
