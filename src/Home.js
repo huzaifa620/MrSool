@@ -103,7 +103,7 @@ const Home = () => {
                         <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
                     </div>
                     <Menu /> */}
-                    <div className='flex w-[27.5%] 2xl:w-[20%] 2xl:scale-100'>
+                    <div className='flex w-[27.5%] 2xl:w-[20%]'>
                         <DateTimePicker />
                     </div>
    
