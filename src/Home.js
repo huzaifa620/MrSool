@@ -1,10 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react'
 import bike from './motorbike.png'
 import car from './suv.png'
-import Menu from './DropdownMenu'
 import { Context } from './Context';
 import data from './data.js'
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -99,11 +97,7 @@ const Home = () => {
 
                 <div className='flex flex-col xl:flex-row w-full items-center tracking-widest uppercase font-semibold justify-around xl:space-x-2 space-y-4 xl:space-y-0'>
                     <p className='w-full xl:w-[70%] uppercase text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center xl:text-left'>Delivery Demand Forecaster</p>
-                    
-                    {/* <div className=''>
-                        <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
-                    </div>
-                    <Menu /> */}
+                   
                     <div className='flex w-[70%] md:w-[30%] lg:w-[22.5%] xl:w-[27.5%] 2xl:w-[20%]'>
                         <DateTimePicker />
                     </div>

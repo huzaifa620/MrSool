@@ -10,59 +10,61 @@ const Form = () => {
   }
 
   useEffect(() => {
+    const lowercaseCity = city.toLowerCase();
+  
     switch (country) {
-        case 'KSA':
-            switch (city) {
-                case 'jeddah':
-                    setIndex(4)
-                    break
-                case 'mecca':
-                    setIndex(5)
-                    break
-                default:
-                    break;
-            }
-            break
-        case 'UAE':
-            switch (city) {
-                case 'dubai':
-                    setIndex(6)
-                    break
-                case 'abudhabi':
-                    setIndex(7)
-                    break
-                default:
-                    break;
-            }
-            break
-        case 'QAT':
-            switch (city) {
-                case 'doha':
-                    setIndex(8)
-                    break
-                case 'dukhan':
-                    setIndex(9)
-                    break
-                default:
-                    break;
-            }
-            break
-        case 'EGY':
-            switch (city) {
-                case 'cairo':
-                    setIndex(10)
-                    break
-                case 'alexandria':
-                    setIndex(11)
-                    break
-                default:
-                    break;
-            }
-            break
-        default:
+      case 'KSA':
+        switch (lowercaseCity) {
+          case 'jeddah':
+            setIndex(4);
             break;
+          case 'mecca':
+            setIndex(5);
+            break;
+          default:
+            break;
+        }
+        break;
+      case 'UAE':
+        switch (lowercaseCity) {
+          case 'dubai':
+            setIndex(6);
+            break;
+          case 'abudhabi':
+            setIndex(7);
+            break;
+          default:
+            break;
+        }
+        break;
+      case 'QAT':
+        switch (lowercaseCity) {
+          case 'doha':
+            setIndex(8);
+            break;
+          case 'alwakrah':
+            setIndex(9);
+            break;
+          default:
+            break;
+        }
+        break;
+      case 'EGY':
+        switch (lowercaseCity) {
+          case 'cairo':
+            setIndex(10);
+            break;
+          case 'alexandria':
+            setIndex(11);
+            break;
+          default:
+            break;
+        }
+        break;
+      default:
+        break;
     }
-  }, [city, country])
+  }, [city, country]);
 
   return (
 

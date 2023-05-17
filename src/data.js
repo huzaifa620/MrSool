@@ -5,7 +5,7 @@ import img3 from './R3.png'
 
 import cairo from './cairo.png'
 import alexandria from './alexandria.png'
-import dukhan from './dukhan.png'
+import alwakrah from './alwakrah.jpg'
 import doha from './doha.png'
 import abudhabi from './abudhabi.png'
 import dubai from './dubai.png'
@@ -481,7 +481,7 @@ const data = [
     }, 
 
     {
-        image: dukhan,
+        image: alwakrah,
         restaurants: [
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},

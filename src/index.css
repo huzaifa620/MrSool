@@ -24,13 +24,6 @@ body {
     padding-top: 0 !important;
 }
 
-
-/* .MuiInputBase-root.MuiOutlinedInput-root {
-    border-width: 4px;
-    border-color: #00BF6F;
-    border-radius: 16px;
-} */
-
 .MuiTextField-root {
     min-width: auto !important;
 }
@@ -47,8 +40,3 @@ body {
     height: 0.5em;
     cursor: pointer;
 }
-
-/* .MuiInputBase-root.MuiOutlinedInput-root > input:focus {
-    border: #00BF6F !important;
-    outline: #00BF6F !important;
-} */
