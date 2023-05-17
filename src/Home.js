@@ -53,6 +53,7 @@ const Home = () => {
     useEffect(() => {
 
         setIndex(0)
+        setCity('City')
         document.querySelector('#search-dropdown').value = ''
         switch (country) {
             case 'KSA':
