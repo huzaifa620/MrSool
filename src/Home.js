@@ -33,9 +33,11 @@ const Home = () => {
     };
 
     const handleZoomIn = () => {
-        setZoomLevel(zoomLevel + 0.1);
-        if (index !== 0) {
-            setCount(count+1)
+        if (zoomLevel < 1.5) {
+            setZoomLevel(zoomLevel + 0.1);
+            if (index !== 0) {
+                setCount(count+1)
+            }
         }
     };
 

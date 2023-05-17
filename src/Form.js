@@ -10,7 +10,7 @@ const Form = () => {
   }
 
   useEffect(() => {
-    const lowercaseCity = city.toLowerCase();
+    const lowercaseCity = city.toLowerCase().trim();
   
     switch (country) {
       case 'KSA':
