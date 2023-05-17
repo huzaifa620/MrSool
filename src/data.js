@@ -1,7 +1,7 @@
 import img0 from './R0.png'
-import img1 from './R1.png'
-import img2 from './R2.png'
-import img3 from './R3.png'
+import img1 from './J1.jpg'
+import img2 from './J2.jpg'
+import img3 from './J3.jpg'
 
 import cairo from './cairo.png'
 import alexandria from './alexandria.png'
