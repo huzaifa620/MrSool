@@ -104,7 +104,7 @@ const Home = () => {
                         <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
                     </div>
                     <Menu /> */}
-                    <div className='flex w-[27.5%] 2xl:w-[20%]'>
+                    <div className='flex w-[70%] md:w-[30%] lg:w-[22.5%] xl:w-[27.5%] 2xl:w-[20%]'>
                         <DateTimePicker />
                     </div>
    
@@ -115,7 +115,7 @@ const Home = () => {
 
                     <Form />
 
-                    <div className='flex flex-col items-center space-y-2 absolute bottom-4 left-4 px-0.5 py-0.5 bg-white h-fit w-fit rounded-lg'>
+                    <div className='flex flex-col items-center space-y-2 absolute bottom-4 right-4 px-0.5 py-0.5 bg-white h-fit w-fit rounded-lg scale-75 md:scale-100'>
                         <AddIcon onClick={handleZoomIn} className='hover:bg-gray-200' />
                         <div className='h-0.5 w-full bg-gray-400'></div>
                         <RemoveIcon onClick={handleZoomOut} className='hover:bg-gray-200' />
@@ -126,7 +126,7 @@ const Home = () => {
             </div>
 
             <div className='flex flex-col xl:justify-center md:items-center w-full xl:w-[35%] xl:h-full space-y-4'>
-                <div className='uppercase text-xl 2xl:text-4xl font-semibold text-center'>
+                <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
                     Rider Demand Forecaster
                 </div>
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 border-2 border-black rounded-md'>
