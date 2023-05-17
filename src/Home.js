@@ -1,25 +1,28 @@
 import React, { useState, useContext, useEffect } from 'react'
-import ZoomInIcon from '@mui/icons-material/ZoomIn';
-import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 import bike from './motorbike.png'
 import car from './suv.png'
-import Menu from './DropdownMenu'
 import { Context } from './Context';
 import data from './data.js'
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import Form from './Form';
+import DateTimePicker from './DateTimePicker';
+import ALL from './all.png'
+import KSA from './KSA.jpg'
+import QAT from './QAT.png'
+import UAE from './UAE.png'
+import EGY from './EGY.png'
 
 const Home = () => {
 
-    const {index, setIndex, time, timeChange, count, setCount, zoomLevel, setZoomLevel} = useContext(Context)
+    const {index, setIndex, time, setTime, timeChange, count, setCount, zoomLevel, setZoomLevel, country, setCountry, city, setCity} = useContext(Context)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
     const [imgSrc, setImgSrc ] = useState([bike, car]);
-
+    const [zeroIndImg, setZeroIndImg] = useState(ALL)
     const [expanded, setExpanded] = useState([]);
     const handleToggleExpand = (index) => {
         setExpanded((prevExpanded) => {
@@ -29,12 +32,12 @@ const Home = () => {
         });
     };
 
-    
-
     const handleZoomIn = () => {
-        setZoomLevel(zoomLevel + 0.1);
-        if (index !== 0) {
-            setCount(count+1)
+        if (zoomLevel < 1.5) {
+            setZoomLevel(zoomLevel + 0.1);
+            if (index !== 0) {
+                setCount(count+1)
+            }
         }
     };
 
@@ -48,21 +51,45 @@ const Home = () => {
     };
 
     useEffect(() => {
-        if (time === ' 08am - 10am ') {
-          setIndex(1);
-        } else if (time === ' 02pm - 04pm ') {
-          setIndex(2);
-        } else if (time === ' 09pm - 11pm ') {
-          setIndex(3);
+
+        setIndex(0)
+        setCity('City')
+        document.querySelector('#search-dropdown').value = ''
+        switch (country) {
+            case 'KSA':
+                setZeroIndImg(KSA)
+                break;
+            case 'UAE':
+                setZeroIndImg(UAE)
+                break;
+            case 'QAT':
+                setZeroIndImg(QAT)
+                break;
+            case 'EGY':
+                setZeroIndImg(EGY)
+                break;
+            default:
+                break;
         }
-        
-      }, [time]);
+    }, [country]);
+
+    useEffect(() => {
+        if (city !== 'City') {
+            if (time <= 8) {
+                setIndex(1);
+            } else if (time > 8 && time <= 16) {
+                setIndex(2);
+            } else if (time > 16 && time <= 23) {
+                setIndex(3);
+            }
+        }
+    }, [time])
 
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-8 xl:space-y-24 p-2 pt-[10%] xl:pt-[6%]'>
 
         <div className='flex flex-col items-center justify-center w-full md:w-[90%] xl:w-[70%] space-y-4 xl:space-y-8'>
-            <h2 className='text-3xl md:text-5xl font-bold tracking-widest uppercase'> Demand Forecaster </h2>
+            <h2 className='text-3xl md:text-5xl font-bold tracking-widest uppercase text-center'> Demand Forecaster </h2>
             <p className='text-justify text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
@@ -71,23 +98,23 @@ const Home = () => {
             <div className='flex flex-col justify-center w-full xl:w-[65%] h-full space-y-4'>
 
                 <div className='flex flex-col xl:flex-row w-full items-center tracking-widest uppercase font-semibold justify-around xl:space-x-2 space-y-4 xl:space-y-0'>
-                    <p className='w-full xl:w-[70%] uppercase text-2xl md:text-4xl font-semibold text-center xl:text-left'>Delivery Demand Forecaster</p>
-                    
-                    <div className=''>
-                        <DatePicker className='border bg-mrsool-green text-white py-2 text-center cursor-pointer rounded-lg px-4 shadow-md focus:outline-none w-[240px] tracking-widest caret-transparent active:bg-white transition-colors duration-500 ease-out' selected={selectedDate} onChange={handleDateChange} />
+                    <p className='w-full xl:w-[70%] uppercase text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center xl:text-left'>Delivery Demand Forecaster</p>
+                   
+                    <div className='flex w-[70%] md:w-[30%] lg:w-[22.5%] xl:w-[27.5%] 2xl:w-[20%]'>
+                        <DateTimePicker />
                     </div>
-                    <Menu />
    
                 </div>
 
                 <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
-                    <img src={data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
-                    <div className='flex flex-col items-center space-y-2 absolute bottom-4 left-4 px-0.5 py-0.5 bg-white h-fit w-fit rounded-lg'>
+                    <img src={index === 0 ? zeroIndImg : data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
+
+                    <Form />
+
+                    <div className='flex flex-col items-center space-y-2 absolute bottom-4 right-4 px-0.5 py-0.5 bg-white h-fit w-fit rounded-lg scale-75 md:scale-100'>
                         <AddIcon onClick={handleZoomIn} className='hover:bg-gray-200' />
                         <div className='h-0.5 w-full bg-gray-400'></div>
                         <RemoveIcon onClick={handleZoomOut} className='hover:bg-gray-200' />
-                        {/* <ZoomInIcon onClick={handleZoomIn} />
-                        <ZoomOutIcon onClick={handleZoomOut} /> */}
                     </div>
 
                 </div>
@@ -95,7 +122,7 @@ const Home = () => {
             </div>
 
             <div className='flex flex-col xl:justify-center md:items-center w-full xl:w-[35%] xl:h-full space-y-4'>
-                <div className='uppercase text-xl md:text-4xl font-semibold text-center'>
+                <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
                     Rider Demand Forecaster
                 </div>
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 border-2 border-black rounded-md'>

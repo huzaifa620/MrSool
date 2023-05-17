@@ -9,3 +9,34 @@ body {
 .react-datepicker-wrapper {
     width: 240px;
 }
+
+.MuiPickersToolbar-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.MuiTypography-root.MuiTypography-overline {
+    text-align: center;
+}
+
+.css-b3dvpx-MuiStack-root {
+    padding-top: 0 !important;
+}
+
+.MuiTextField-root {
+    min-width: auto !important;
+}
+
+.MuiStack-root {
+    min-width: auto !important;
+    width: 100% !important;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root > input {
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+    height: 0.5em;
+    cursor: pointer;
+}
