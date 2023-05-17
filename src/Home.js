@@ -74,11 +74,11 @@ const Home = () => {
 
     useEffect(() => {
         if (city !== 'City') {
-            if (time === 8) {
+            if (time <= 8) {
                 setIndex(1);
-            } else if (time === 2) {
+            } else if (time > 8 && time <= 16) {
                 setIndex(2);
-            } else if (time === 11) {
+            } else if (time > 16 && time <= 23) {
                 setIndex(3);
             }
         }

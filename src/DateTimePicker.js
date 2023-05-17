@@ -4,7 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { MobileDateTimePicker } from '@mui/x-date-pickers/MobileDateTimePicker';
 import { Context } from './Context';
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 
 export default function DateTimePicker() {
 
