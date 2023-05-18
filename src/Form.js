@@ -90,9 +90,9 @@ const Form = () => {
                 </ul>
             </div>
             
-            <button id="dropdownSmallButton" data-dropdown-toggle="dropdownSmall" class="text-white bg-mrsool-green hover:bg-mrsool-green-hover focus:outline-none py-2.5 px-1 md:px-4 text-xs md:text-sm md:font-medium text-center inline-flex items-center rounded-r-lg" type="button"> {city} <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+            <button id="dropdownSmallButton" data-dropdown-toggle="dropdownSmall" className="text-white bg-mrsool-green hover:bg-mrsool-green-hover focus:outline-none py-2.5 px-1 md:px-4 text-xs md:text-sm md:font-medium text-center inline-flex items-center rounded-r-lg" type="button"> {city} <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
             
-            <div id="dropdownSmall" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow md:w-1/4">
+            <div id="dropdownSmall" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow md:w-1/4">
               <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col items-center justify-center w-full" aria-labelledby="dropdown-button">
 
                 {cities[country]?.map((val, ind) => (
