@@ -73,7 +73,7 @@ const Form = () => {
             <label htmlFor="search-dropdown" className="mb-2 text-sm font-medium text-gray-900 sr-only"></label>
 
             <div className='flex flex-col relative w-[30%] md:w-1/4'>
-              <button onClick={() => setDropCont(!dropCont)} id="dropdown-button" data-dropdown-toggle="dropdown" className="flex-shrink-0 z-10 inline-flex items-center justify-between py-2.5 px-1 md:px-4 text-xs md:text-sm md:font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:outline-none active:bg-mrsool-green transition-colors duration-500 ease-out" type="button">
+              <button onClick={() => setDropCont(!dropCont)} id="dropdown-button" data-dropdown-toggle="dropdown" className="flex-shrink-0 z-10 inline-flex items-center justify-between py-2.5 px-2 md:px-4 text-xs md:text-sm md:font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-l-lg hover:bg-gray-200 focus:outline-none active:bg-mrsool-green transition-colors duration-500 ease-out" type="button">
                 <span> {country} </span> 
                 <svg aria-hidden="true" className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
               </button>
@@ -98,8 +98,8 @@ const Form = () => {
 
             </div>
             
-            <div className='flex flex-col relative w-1/4'>
-              <button onClick={() => setDrop(!drop)} id="dropdownSmallButton" data-dropdown-toggle="dropdownSmall" className="text-white bg-mrsool-green hover:bg-mrsool-green-hover focus:outline-none py-2.5 px-1 md:px-4 text-xs md:text-sm md:font-medium text-center inline-flex items-center justify-between rounded-r-lg" type="button"> 
+            <div className='flex flex-col relative w-[40%] md:w-1/3'>
+              <button onClick={() => setDrop(!drop)} id="dropdownSmallButton" data-dropdown-toggle="dropdownSmall" className="text-white bg-mrsool-green hover:bg-mrsool-green-hover focus:outline-none py-2.5 px-2 md:px-4 text-xs md:text-sm md:font-medium text-center inline-flex items-center justify-between rounded-r-lg" type="button"> 
                 <span> {city} </span> 
                 <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
