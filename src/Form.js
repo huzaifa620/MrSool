@@ -1,16 +1,14 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Context } from './Context';
 
 const Form = () => {
 
   const {country, setCountry, city, setCity, index, setIndex}  = useContext(Context)
 
-  const cityChange = () => {
-    setCity(document.querySelector('#search-dropdown').value)
-  }
+  const [cities, setCities] = useState({'Country': [], 'KSA' : ['Jeddah', 'Mecca'], 'UAE': ['Dubai', 'Abu Dhabi'], 'QAT': ['Doha', 'Al Wakrah'], 'EGY': ['Cairo', 'Alexandria']})
 
   useEffect(() => {
-    const lowercaseCity = city.toLowerCase().trim();
+    const lowercaseCity = city.replace(' ', '').toLowerCase().trim();
   
     switch (country) {
       case 'KSA':
@@ -64,7 +62,7 @@ const Form = () => {
       default:
         break;
     }
-  }, [city, country]);
+  }, [city, country, cities]);
 
   return (
 
@@ -91,15 +89,21 @@ const Form = () => {
                     </li>
                 </ul>
             </div>
-            <div className="relative w-full">
+            
+            <button id="dropdownSmallButton" data-dropdown-toggle="dropdownSmall" class="text-white bg-mrsool-green hover:bg-mrsool-green-hover focus:outline-none py-2.5 px-1 md:px-4 text-xs md:text-sm md:font-medium text-center inline-flex items-center rounded-r-lg" type="button"> {city} <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+            
+            <div id="dropdownSmall" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow md:w-1/4">
+              <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col items-center justify-center w-full" aria-labelledby="dropdown-button">
 
-                <input type="search" id="search-dropdown" className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-mrsool-green focus:border-mrsool-green" placeholder="Search for city" required disabled={country==='Country'} />
+                {cities[country]?.map((val, ind) => (
+                  <li className='w-full'>
+                    <button onClick={() => setCity(val)} className="inline-flex w-full items-center justify-center px-4 py-2 hover:bg-gray-100">{val}</button>
+                  </li>  
+                ))}
 
-                <button id='city' onClick={cityChange} className="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-mrsool-green rounded-r-lg border border-green-600 hover:bg-mrsool-green-hover focus:outline-none">
-                    <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    <span className="sr-only">Search</span>
-                </button>
+              </ul>
             </div>
+
         </div>
     </div>
 

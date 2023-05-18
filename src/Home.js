@@ -54,7 +54,6 @@ const Home = () => {
 
         setIndex(0)
         setCity('City')
-        document.querySelector('#search-dropdown').value = ''
         switch (country) {
             case 'KSA':
                 setZeroIndImg(KSA)
@@ -125,7 +124,7 @@ const Home = () => {
                 <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
                     Rider Demand Forecaster
                 </div>
-                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 border-2 border-black rounded-md'>
+                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl'>
 
                     {
                         data[index]?.restaurants.map((val, ind) => (
@@ -155,7 +154,7 @@ const Home = () => {
             <div className='xl:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center xl:text-left'>
                 Optimized Delivery Scheduler
             </div>
-            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded border-2 border-black h-full p-1 lg:p-4 py-8 space-y-4'>
+            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded-br-2xl rounded-l-2xl h-full p-1 lg:p-4 py-8 space-y-4'>
 
                 {
                     data[index]?.restaurants.map((val, ind) => {
