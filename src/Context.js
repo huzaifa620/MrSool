@@ -20,7 +20,7 @@ const StateProvider = ({ children }) => {
     const [index, setIndex] = useState(0)
     const [count, setCount] = useState(0)
     const [zoomLevel, setZoomLevel] = useState(1);
-    const [country, setCountry] = useState('Country')
+    const [country, setCountry] = useState('KSA')
     const [city, setCity] = useState('City')
 
     const timeChange = (event) => {
