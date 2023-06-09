@@ -183,9 +183,21 @@ const data = [
                     { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
                 ],
                 imgUrl: 'https://barns.com.sa/public/assets/store/themes/ecomm/images/Logo_green.png'
+            },
+            {
+                name: "Deep Fries",
+                riders: 5,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://s3.eu-west-1.amazonaws.com/cdn.getsolo.io/1653517806628eadee4def0_DF%20NEW%20LOGO-01.png'
             }
         ],
-        sum: 57
+        sum: 62
     },
 
     {
