@@ -11,6 +11,7 @@ import DateTimePicker from './DateTimePicker';
 import ALL from './all.png'
 import KSA from './KSA.jpg'
 import EGY from './EGY.png'
+import { Card, Metric, Text } from "@tremor/react";
 
 const Home = () => {
 
@@ -117,6 +118,11 @@ const Home = () => {
                     Order Demand Forecaster
                 </div>
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl'>
+
+                    <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
+                        <Text>Total Riders</Text>
+                        <Metric>{data[index].sum}</Metric>
+                    </Card>
 
                     {
                         data[index]?.restaurants.map((val, ind) => (
