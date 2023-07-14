@@ -10,8 +10,6 @@ import Form from './Form';
 import DateTimePicker from './DateTimePicker';
 import ALL from './all.png'
 import KSA from './KSA.jpg'
-import QAT from './QAT.png'
-import UAE from './UAE.png'
 import EGY from './EGY.png'
 
 const Home = () => {
@@ -57,12 +55,6 @@ const Home = () => {
         switch (country) {
             case 'KSA':
                 setZeroIndImg(KSA)
-                break;
-            case 'UAE':
-                setZeroIndImg(UAE)
-                break;
-            case 'QAT':
-                setZeroIndImg(QAT)
                 break;
             case 'EGY':
                 setZeroIndImg(EGY)
@@ -122,7 +114,7 @@ const Home = () => {
 
             <div className='flex flex-col xl:justify-center md:items-center w-full xl:w-[35%] xl:h-full space-y-4'>
                 <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
-                    Rider Demand Forecaster
+                    Order Demand Forecaster
                 </div>
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl'>
 
