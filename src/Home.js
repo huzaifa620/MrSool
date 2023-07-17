@@ -77,6 +77,14 @@ const Home = () => {
         }
     }, [time])
 
+    const [totalRiders, setTotalRiders] = useState(0);
+
+    useEffect(() => {
+        const riders = Array.from(document.querySelectorAll('div.riders p.text-sm span')).map(element => parseInt(element.textContent));
+        const sum = riders.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        setTotalRiders(sum);
+    }, [time, index, zoomLevel]);
+
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-8 xl:space-y-24 p-2 pt-[10%] xl:pt-[6%]'>
 
@@ -117,17 +125,17 @@ const Home = () => {
                 <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
                     Order Demand Forecaster
                 </div>
-                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl'>
+                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl border-y-2 border-l-2 border-black' key={index}>
 
                     <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
                         <Text>Total Riders</Text>
-                        <Metric>{data[index].sum}</Metric>
+                        <Metric className='text-[#3B82F]'>{totalRiders}</Metric>
                     </Card>
 
                     {
                         data[index]?.restaurants.map((val, ind) => (
 
-                            <div key={ind} className='flex border rounded-xl bg-white space-x-4 p-1 lg:p-4 w-full'>
+                            <div key={ind} className='flex border rounded-xl bg-white space-x-4 p-1 lg:p-4 w-full riders'>
                                 <div className='w-[20%] flex items-center justify-center'>
                                     <img src={val.imgUrl} alt='' className='w-16 h-16 scale-75 md:scale-100' />
                                 </div>
@@ -135,7 +143,7 @@ const Home = () => {
                                     <p className='tracking-widest md:text-xl font-bold'> {val.name} </p>
                                     <div className='flex space-x-3 items-center'>
                                         <img src={car} alt='' className='w-6 h-6' />
-                                        <p className='text-sm md:text-lg'> Riders required : {Math.max(val.riders - count, 0)} ({ (Math.max(val.riders - count, 0) === 0) ? '<0.1' : Math.min(Math.max((val.riders - count) / (data[index].sum - (data[index].restaurants.length * count)) * 100, 0), 100).toFixed(1)} %) </p>
+                                        <p className='text-sm md:text-lg'> Riders required : <span>{Math.max(val.riders - count, 0)}</span> ({ (Math.max(val.riders - count, 0) === 0) ? '<0.1' : Math.min(Math.max((val.riders - count) / (data[index].sum - (data[index].restaurants.length * count)) * 100, 0), 100).toFixed(1)} %) </p>
                                     </div>
                                 </div>
                             </div>
@@ -148,11 +156,11 @@ const Home = () => {
 
         </div>
 
-        <div className='flex flex-col w-full xl:w-[55%] h-[80%] space-y-4 pb-24'>
+        <div className='flex flex-col w-full xl:w-[55%] h-full space-y-4 pb-24'>
             <div className='xl:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center xl:text-left'>
                 Optimized Delivery Scheduler
             </div>
-            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded-br-2xl rounded-l-2xl h-full p-1 lg:p-4 py-8 space-y-4'>
+            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded-br-2xl rounded-l-2xl h-full p-1 lg:p-4 py-8 space-y-4 border-y-2 border-l-2 border-black'>
 
                 {
                     data[index]?.restaurants.map((val, ind) => {
