@@ -52,9 +52,9 @@ const Form = () => {
                 <svg aria-hidden="true" className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
               </button>
 
-              { dropCont && <div id="dropdown" className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow">
+              { dropCont && <div id="dropdown" className="z-10">
 
-                  <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col items-center justify-center w-full" aria-labelledby="dropdown-button">
+                  <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col items-center justify-center w-full absolute bg-white divide-y divide-gray-100 rounded shadow" aria-labelledby="dropdown-button">
                       <li className='w-full'>
                           <button onClick={() => {setCountry('KSA'); setDropCont(!dropCont); setDrop(false)}} className="inline-flex w-full items-center justify-center px-4 py-2 hover:bg-gray-100">Saudi Arabia</button>
                       </li>
@@ -72,8 +72,8 @@ const Form = () => {
                 <svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
               
-              {drop && <div id="dropdownSmall" className="z-10 bg-white divide-y divide-gray-100 rounded-lg shadow">
-                <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col items-center justify-center w-full" aria-labelledby="dropdown-button">
+              {drop && <div id="dropdownSmall" className="z-20">
+                <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col h-auto items-center justify-center w-full absolute bg-white divide-y divide-gray-100 rounded shadow" aria-labelledby="dropdown-button">
 
                   {Object.keys(cities[country])?.map((key, val) => (
                     <li className='w-full' key={val}>
@@ -89,7 +89,7 @@ const Form = () => {
               <SearchSelect value={selectedDistrict} onValueChange={setSelectedDistrict} placeholder="District" className="tremor-brand-subtle tremor-brand-muted tremor-label focus:outline-none min-w-[100px] lg:min-w-[144px]">
                 {
                   district[city]?.map((val, ind) => (
-                    <SearchSelectItem key={ind} value={val} className='bg-white'>
+                    <SearchSelectItem key={ind} value={val} className='bg-white hover:bg-gray-100 fontSize-tremor-label'>
                       {val}
                     </SearchSelectItem>    
                   ))

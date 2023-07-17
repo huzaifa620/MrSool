@@ -116,7 +116,7 @@ const Home = () => {
                     </div> 
                 }
 
-                <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
+                <div className='w-full relative border-2 border-black rounded-2xl h-[90%]'>
                     <img src={index === 0 ? zeroIndImg : data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
 
                     <Form />
