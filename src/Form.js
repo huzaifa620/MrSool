@@ -6,7 +6,7 @@ const Form = () => {
 
   const {country, setCountry, city, setCity, index, setIndex, selectedDistrict, setSelectedDistrict}  = useContext(Context)
 
-  const [cities, setCities] = useState({'Country': {'': 0}, 'KSA' : {'Jeddah':4, 'Riyadh':5, 'Mecca':6, 'Medina':7, 'Dammam':8, 'Taif':9, 'Tabuk':10, 'Buraidah':11, 'Abha':12, 'Al-Khobar':13}, 'EGY': {'Cairo': 14, 'Alexandria': 15, 'Giza': 16, 'Sharm El-Sheikh': 17, 'Luxor': 18, 'Aswan': 19, 'Hurghada': 20, 'Port Said': 21, 'Suez': 22, 'Mansoura':23} })
+  const [cities, setCities] = useState({'Country': {'': 0}, 'KSA' : {'Jeddah':4, 'Riyadh':5, 'Mecca':6, 'Medina':7, 'Dammam':8, 'Taif':9, 'Tabuk':10}, 'EGY': {'Cairo': 14, 'Alexandria': 15, 'Giza': 16, 'Sharm El-Sheikh': 17, 'Luxor': 18, 'Aswan': 19, 'Hurghada': 20} })
 
   const [drop, setDrop] = useState(false)
   const [dropCont, setDropCont] = useState(false)
