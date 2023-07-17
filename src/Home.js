@@ -15,7 +15,7 @@ import { Card, Metric, Text } from "@tremor/react";
 
 const Home = () => {
 
-    const {index, setIndex, time, setTime, timeChange, count, setCount, zoomLevel, setZoomLevel, country, setCountry, city, setCity} = useContext(Context)
+    const {index, setIndex, time, setTime, timeChange, count, setCount, zoomLevel, setZoomLevel, country, setCountry, city, setCity, selectedDistrict, setSelectedDistrict} = useContext(Context)
     const [selectedDate, setSelectedDate] = useState(new Date());
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -106,6 +106,16 @@ const Home = () => {
    
                 </div>
 
+                {country !== 'Country' && 
+                    <div className='w-full justify-center xl:justify-start xl:px-6 flex items-center xl:tracking-[0.2em] space-x-2 xl:space-x-3'> 
+                        <span className='bg-[#6F7E8C] hover:bg-[#798897] p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {country === 'KSA' ? 'Saudi Arabia': 'Egypt'} </span>  
+                        <span className='font-bold'>&gt;</span>  
+                        <span className='bg-[#6F7E8C] hover:bg-[#798897] p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {city} </span>  
+                        <span className='font-bold'>&gt;</span>
+                        <span className='bg-[#6F7E8C] hover:bg-[#798897] p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {selectedDistrict ? selectedDistrict: 'District'} </span>  
+                    </div> 
+                }
+
                 <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
                     <img src={index === 0 ? zeroIndImg : data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
 
@@ -120,11 +130,13 @@ const Home = () => {
                 </div>
 
             </div>
+            
 
             <div className='flex flex-col xl:justify-center md:items-center w-full xl:w-[35%] xl:h-full space-y-4'>
                 <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
                     Order Demand Forecaster
                 </div>
+                {country !== 'Country' &&  <div className='h-[28px]'></div> }
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl border-y-2 border-l-2 border-black' key={index}>
 
                     <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
