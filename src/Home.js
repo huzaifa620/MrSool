@@ -131,20 +131,14 @@ const Home = () => {
 
             </div>
             
-
             <div className='flex flex-col xl:justify-center md:items-center w-full xl:w-[35%] xl:h-full space-y-4'>
                 <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
                     Order Demand Forecaster
                 </div>
                 {country !== 'Country' &&  <div className='h-[28px]'></div> }
-                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl border-y-2 border-l-2 border-black' key={index}>
+                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-2xl xl:rounded-r-sm border-2 border-black' key={index}>
 
-                    {/* <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
-                        <Text>Total Riders</Text>
-                        <Metric className='text-[#3B82F]'>{totalRiders}</Metric>
-                    </Card> */}
-
-                    <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
+                    <Card className="max-w-xs mx-auto bg-white rounded-2xl mb-4" decoration="top" decorationColor="green">
                         <Flex className="space-x-8 justify-center">
                             <img src={car} alt='' className='w-12 h-12' />
                             <div>
@@ -182,7 +176,7 @@ const Home = () => {
             <div className='xl:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center xl:text-left'>
                 Optimized Delivery Scheduler
             </div>
-            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 rounded-br-2xl rounded-l-2xl h-full p-1 lg:p-4 py-8 space-y-4 border-y-2 border-l-2 border-black'>
+            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 h-full p-1 lg:p-4 py-8 space-y-4 rounded-2xl xl:rounded-r-sm border-2 border-black'>
 
                 {
                     data[index]?.restaurants.map((val, ind) => {
