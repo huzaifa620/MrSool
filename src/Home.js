@@ -11,7 +11,7 @@ import DateTimePicker from './DateTimePicker';
 import ALL from './all.png'
 import KSA from './KSA.jpg'
 import EGY from './EGY.png'
-import { Card, Metric, Text } from "@tremor/react";
+import { Card, Metric, Text, Flex } from "@tremor/react";
 
 const Home = () => {
 
@@ -139,9 +139,19 @@ const Home = () => {
                 {country !== 'Country' &&  <div className='h-[28px]'></div> }
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-br-2xl rounded-l-2xl border-y-2 border-l-2 border-black' key={index}>
 
-                    <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
+                    {/* <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
                         <Text>Total Riders</Text>
                         <Metric className='text-[#3B82F]'>{totalRiders}</Metric>
+                    </Card> */}
+
+                    <Card className="max-w-xs mx-auto bg-white rounded-2xl" decoration="top" decorationColor="green">
+                        <Flex className="space-x-8 justify-center">
+                            <img src={car} alt='' className='w-12 h-12' />
+                            <div>
+                                <Text>Total Riders</Text>
+                                <Metric className='text-[#3B82F]'>{totalRiders}</Metric>
+                            </div>
+                        </Flex>
                     </Card>
 
                     {
