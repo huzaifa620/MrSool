@@ -11,7 +11,8 @@ import DateTimePicker from './DateTimePicker';
 import ALL from './all.png'
 import KSA from './KSA.jpg'
 import EGY from './EGY.png'
-import { Card, Metric, Text, Flex, CategoryBar, Legend } from "@tremor/react";
+import { Card, Metric, Text, Flex, CategoryBar, Legend, Icon, Divider } from "@tremor/react";
+import { CashIcon } from "@heroicons/react/outline"
 
 const Home = () => {
 
@@ -139,12 +140,12 @@ const Home = () => {
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-2xl xl:rounded-r-sm border-2 border-black' key={index}>
 
                     {totalRiders !== 0 && 
-                    <Card className="max-w-xs mx-auto bg-white rounded-2xl mb-4" decoration="top" decorationColor="green">
+                    <Card className="max-w-xs mx-auto rounded-tremor-xl mb-4" decoration="top" decorationColor="green">
                         <Flex className="space-x-8 justify-center">
                             {/* <img src={car} alt='' className='w-12 h-12' /> */}
                             <div className='w-full'>
                                 <Text> Total Riders </Text>
-                                <Metric className='text-[#3B82F]'> {totalRiders} </Metric>
+                                <Metric> {totalRiders} </Metric>
                                 <CategoryBar className="mt-4" values={[Math.ceil(totalRiders*0.8), Math.floor(totalRiders*0.2)]} colors={["emerald", "red"]} />
                                 <Legend className="mt-3" categories={["Car", "Bike"]} colors={["emerald", "red"]} />
                             </div>
@@ -189,8 +190,22 @@ const Home = () => {
                                 <div className='hidden md:flex w-[20%] md:scale-75 lg:scale-100 items-center'>
                                     <img src={val.imgUrl} alt='' className='w-32 h-32' />
                                 </div>
-                                <div className='w-full flex flex-col space-y-2 justify-center'>
+                                <div className='w-full flex flex-col space-y-3 justify-center'>
                                     <p className='tracking-widest text-xl md:text-3xl font-bold text-center'>{val.name}</p>
+                                    {totalRiders !== 0 && 
+                                    <div className='w-full flex items-center justify-center'>
+                                        <Card className="w-3/4 md:w-[50%] xl:w-[40%] px-8 py-4 rounded-tremor-xl"  decoration="top" decorationColor="green">
+                                            <Flex className="space-x-6 md:space-x-10 justify-center">
+                                                <Icon icon={CashIcon} color="green" variant="solid" tooltip="Avg. Earnings" size="sm" />
+                                                <div>
+                                                    <Text>Average Earnings</Text>
+                                                    <Metric>SAR 35</Metric>
+                                                </div>
+                                            </Flex>
+                                        </Card>
+                                    </div>
+                                    }
+                                    <Divider />
                                     <p>Nearby Riders</p>
                                     <div className='flex space-x-3 items-center'>
                                         {isExpanded ? (
