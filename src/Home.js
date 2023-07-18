@@ -183,7 +183,7 @@ const Home = () => {
             <div className='xl:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center'>
                 Optimized Delivery Scheduler
             </div>
-            <div className='bg-mrsool-green h-full rounded-2xl border-2 border-black py-4'>
+            <div className='bg-mrsool-green h-[93%] rounded-2xl border-2 border-black py-4'>
 
                 <div className='w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-mrsool-green scrollbar-thumb-gray-200 h-full p-1 lg:p-4 py-8 space-y-4'>
                     {
