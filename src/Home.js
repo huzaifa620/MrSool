@@ -21,15 +21,16 @@ const Home = () => {
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
+
     const [imgSrc, setImgSrc ] = useState([bike, car]);
     const [zeroIndImg, setZeroIndImg] = useState(ALL)
-    const [expanded, setExpanded] = useState([]);
+
+    const [expanded, setExpanded] = useState({});
     const handleToggleExpand = (index) => {
-        setExpanded((prevExpanded) => {
-            const updatedExpanded = [...prevExpanded];
-            updatedExpanded[index] = !updatedExpanded[index];
-            return updatedExpanded;
-        });
+        setExpanded((prevExpanded) => ({
+        ...prevExpanded,
+        [index]: !prevExpanded[index],
+        }));
     };
 
     const handleZoomIn = () => {
@@ -109,11 +110,11 @@ const Home = () => {
 
                 {country !== 'Country' && 
                     <div className='w-full justify-center xl:justify-start xl:px-6 flex items-center xl:tracking-[0.2em] space-x-2 xl:space-x-3'> 
-                        <span className='bg-[#6F7E8C] hover:bg-[#798897] p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {country === 'KSA' ? 'Saudi Arabia': 'Egypt'} </span>  
+                        <span className='bg-mrsool-green hover:bg-mrsool-green-hover p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {country === 'KSA' ? 'Saudi Arabia': 'Egypt'} </span>  
                         <span className='font-bold'>&gt;</span>  
-                        <span className='bg-[#6F7E8C] hover:bg-[#798897] p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {city} </span>  
+                        <span className='bg-mrsool-green hover:bg-mrsool-green-hover p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {city} </span>  
                         <span className='font-bold'>&gt;</span>
-                        <span className='bg-[#6F7E8C] hover:bg-[#798897] p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {selectedDistrict ? selectedDistrict: 'District'} </span>  
+                        <span className='bg-mrsool-green hover:bg-mrsool-green-hover p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {selectedDistrict ? selectedDistrict: 'District'} </span>  
                     </div> 
                 }
 
@@ -144,10 +145,10 @@ const Home = () => {
                         <Flex className="space-x-8 justify-center">
                             {/* <img src={car} alt='' className='w-12 h-12' /> */}
                             <div className='w-full'>
-                                <Text> Total Riders </Text>
-                                <Metric> {totalRiders} </Metric>
+                                <Text className='text-tremor-title'> Total Riders </Text>
+                                <Metric> <span className='font-bold text-tremor-xlarge'>{totalRiders}</span> </Metric>
                                 <CategoryBar className="mt-4" values={[Math.ceil(totalRiders*0.8), Math.floor(totalRiders*0.2)]} colors={["emerald", "red"]} />
-                                <Legend className="mt-3" categories={["Car", "Bike"]} colors={["emerald", "red"]} />
+                                <Legend className="mt-3" categories={["Car 🚕", "Bike 🏍️"]} colors={["emerald", "red"]} />
                             </div>
                         </Flex>
                     </Card> }
@@ -177,76 +178,79 @@ const Home = () => {
         </div>
 
         <div className='flex flex-col w-full xl:w-[55%] xl:h-full space-y-4 pb-24'>
-            <div className='xl:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center xl:text-left'>
+            <div className='xl:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center'>
                 Optimized Delivery Scheduler
             </div>
-            <div className='bg-mrsool-green w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 h-full p-1 lg:p-4 py-8 space-y-4 rounded-2xl xl:rounded-r-sm border-2 border-black'>
+            <div className='bg-mrsool-green h-full rounded-2xl border-2 border-black py-4'>
 
-                {
-                    data[index]?.restaurants.map((val, ind) => {
-                        const isExpanded = expanded[ind] || false;
-                        return (
-                            <div key={ind} className='flex border rounded-2xl bg-white lg:space-x-4 p-1 lg:p-2 xl:p-4 w-full'>
-                                <div className='hidden md:flex w-[20%] md:scale-75 lg:scale-100 items-center'>
-                                    <img src={val.imgUrl} alt='' className='w-32 h-32' />
-                                </div>
-                                <div className='w-full flex flex-col space-y-3 justify-center'>
-                                    <p className='tracking-widest text-xl md:text-3xl font-bold text-center'>{val.name}</p>
-                                    {totalRiders !== 0 && 
-                                    <div className='w-full flex items-center justify-center'>
-                                        <Card className="w-3/4 md:w-[50%] xl:w-[40%] px-8 py-4 rounded-tremor-xl"  decoration="top" decorationColor="green">
-                                            <Flex className="space-x-6 md:space-x-10 justify-center">
-                                                <Icon icon={CashIcon} color="green" variant="solid" tooltip="Avg. Earnings" size="sm" />
-                                                <div>
-                                                    <Text>Average Earnings</Text>
-                                                    <Metric>SAR 35</Metric>
+                <div className='w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-mrsool-green scrollbar-thumb-gray-200 h-full p-1 lg:p-4 py-8 space-y-4'>
+                    {
+                        data[index]?.restaurants.map((val, ind) => {
+                            const isExpanded = expanded[ind] || false;
+                            return (
+                                <div key={ind} className='flex border rounded-2xl bg-gray-50 lg:space-x-4 p-1 lg:p-2 xl:p-4 w-full'>
+                                    <div className='hidden md:flex w-[20%] md:scale-75 lg:scale-100 items-center'>
+                                        <img src={val.imgUrl} alt='' className='w-32 h-32' />
+                                    </div>
+                                    <div className='w-full flex flex-col space-y-3 justify-center'>
+                                        <p className='tracking-widest text-xl md:text-3xl font-bold text-center'>{val.name}</p>
+                                        {totalRiders !== 0 && 
+                                        <div className='w-full flex items-center justify-center'>
+                                            <Card className="w-3/4 md:w-[50%] xl:w-[40%] px-8 py-4 rounded-tremor-xl">
+                                                <Flex className="space-x-6 md:space-x-10 justify-center">
+                                                    <Icon icon={CashIcon} color="green" variant="solid" tooltip="Avg. Earnings" size="sm" />
+                                                    <div>
+                                                        <Text className='text-tremor-title'>Average Earnings</Text>
+                                                        <Metric>SAR <span className='font-bold text-tremor-xlarge'> { (() => [25, 30, 35][Math.floor(Math.random() * 3)])() } </span></Metric>
+                                                    </div>
+                                                </Flex>
+                                            </Card>
+                                        </div>
+                                        }
+                                        <Divider className='bg-gray-200' />
+                                        <p>Nearby Riders</p>
+                                        <div className='flex space-x-3 items-center'>
+                                            {isExpanded ? (
+                                                <div className='w-full flex flex-col space-y-2'>
+                                                    {val.ridersDetails.map((value, indx) => (
+                                                        <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 lg:px-4'>
+                                                            <div className='w-full md:w-[10%]'>
+                                                                <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
+                                                            </div>
+                                                            <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center xl:text-left'>
+                                                                <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>{value.name}</p>
+                                                                <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>Average Delivery Time: {value.time} mins</p>
+                                                                <p className='text-xs md:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                    { (index!==0) && <button onClick={() => handleToggleExpand(ind)}>Show Less</button> }
                                                 </div>
-                                            </Flex>
-                                        </Card>
-                                    </div>
-                                    }
-                                    <Divider />
-                                    <p>Nearby Riders</p>
-                                    <div className='flex space-x-3 items-center'>
-                                        {isExpanded ? (
-                                            <div className='w-full flex flex-col space-y-2'>
-                                                {val.ridersDetails.map((value, indx) => (
-                                                    <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 lg:px-4'>
-                                                        <div className='w-full md:w-[10%]'>
-                                                            <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
+                                            ) : (
+                                                <div className='w-full flex flex-col space-y-2'>
+                                                    {val.ridersDetails.slice(0, 2).map((value, indx) => (
+                                                        <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 lg:px-4'>
+                                                            <div className='w-full md:w-[10%]'>
+                                                                <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
+                                                            </div>
+                                                            <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center xl:text-left'>
+                                                                <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>{value.name}</p>
+                                                                <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>Average Delivery Time: {value.time} mins</p>
+                                                                <p className='text-xs md:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
+                                                            </div>
                                                         </div>
-                                                        <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center xl:text-left'>
-                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>{value.name}</p>
-                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>Average Delivery Time: {value.time} mins</p>
-                                                            <p className='text-xs md:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                                { (index!==0) && <button onClick={() => handleToggleExpand(ind)}>Show Less</button> }
-                                            </div>
-                                        ) : (
-                                            <div className='w-full flex flex-col space-y-2'>
-                                                {val.ridersDetails.slice(0, 2).map((value, indx) => (
-                                                    <div key={indx} className='flex flex-col md:flex-row border-4 rounded-md bg-white w-full px-1 lg:px-4'>
-                                                        <div className='w-full md:w-[10%]'>
-                                                            <img src={imgSrc[value.type]} alt='' className='w-12 h-12' />
-                                                        </div>
-                                                        <div className='w-full lg:w-[90%] flex items-center justify-center space-x-1 lg:space-x-4 text-center xl:text-left'>
-                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>{value.name}</p>
-                                                            <p className='border-r-2 border-slate-500 px-1 lg:px-4 text-xs md:text-sm lg:text-base'>Average Delivery Time: {value.time} mins</p>
-                                                            <p className='text-xs md:text-sm lg:text-base'>Expected Earning: {value.earning} SAR</p>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                                { (index!==0) && <button onClick={() => handleToggleExpand(ind)}>Show More</button> }
-                                            </div>
-                                        )}
+                                                    ))}
+                                                    { (index!==0) && <button onClick={() => handleToggleExpand(ind)}>Show More</button> }
+                                                </div>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        );
-                    })
-                }
+                            );
+                        })
+                    }
+                </div>
+
 
             </div>
         </div>
