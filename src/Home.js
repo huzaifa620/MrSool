@@ -137,13 +137,12 @@ const Home = () => {
                 <div className='uppercase text-2xl lg:text-3xl xl:text-2xl 2xl:text-4xl font-semibold text-center'>
                     Order Demand Forecaster
                 </div>
-                {country !== 'Country' &&  <div className='h-[28px]'></div> }
-                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-2xl xl:rounded-r-sm border-2 border-black' key={index}>
+                {country !== 'Country' &&  <div className='h-[32px]'></div> }
+                <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center xl:h-[90%] p-2 md:p-4 space-y-2 rounded-2xl border-2 border-black' key={index}>
 
                     {totalRiders !== 0 && 
-                    <Card className="max-w-xs mx-auto rounded-tremor-xl mb-4" decoration="top" decorationColor="green">
+                    <Card className="max-w-xs mx-auto rounded-tremor-xl mb-4">
                         <Flex className="space-x-8 justify-center">
-                            {/* <img src={car} alt='' className='w-12 h-12' /> */}
                             <div className='w-full'>
                                 <Text className='text-tremor-title'> Total Riders </Text>
                                 <Metric> <span className='font-bold text-tremor-xlarge'>{totalRiders}</span> </Metric>
@@ -153,24 +152,27 @@ const Home = () => {
                         </Flex>
                     </Card> }
 
-                    {
-                        data[index]?.restaurants.map((val, ind) => (
+                    <div className='w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-mrsool-green scrollbar-thumb-gray-200 h-full px-2 space-y-4'>
+                        {
+                            data[index]?.restaurants.map((val, ind) => (
 
-                            <div key={ind} className='flex border rounded-xl bg-white space-x-4 p-1 lg:p-4 w-full riders'>
-                                <div className='w-[20%] flex items-center justify-center'>
-                                    <img src={val.imgUrl} alt='' className='w-16 h-16 scale-75 md:scale-100' />
-                                </div>
-                                <div className='w-[80%] xl:w-full flex flex-col space-y-2 justify-center'>
-                                    <p className='tracking-widest md:text-xl font-bold'> {val.name} </p>
-                                    <div className='flex space-x-3 items-center'>
-                                        <img src={car} alt='' className='w-6 h-6' />
-                                        <p className='text-sm md:text-lg'> Riders required : <span>{Math.max(val.riders - count, 0)}</span> ({ (Math.max(val.riders - count, 0) === 0) ? '<0.1' : Math.min(Math.max((val.riders - count) / (data[index].sum - (data[index].restaurants.length * count)) * 100, 0), 100).toFixed(1)} %) </p>
+                                <div key={ind} className='flex border rounded-xl bg-white space-x-4 p-1 lg:p-4 w-full riders'>
+                                    <div className='w-[20%] flex items-center justify-center'>
+                                        <img src={val.imgUrl} alt='' className='w-16 h-16 scale-75 md:scale-100' />
+                                    </div>
+                                    <div className='w-[80%] xl:w-full flex flex-col space-y-2 justify-center'>
+                                        <p className='tracking-widest md:text-xl font-bold'> {val.name} </p>
+                                        <div className='flex space-x-3 items-center'>
+                                            <img src={car} alt='' className='w-6 h-6' />
+                                            <p className='text-sm md:text-lg'> Riders required : <span>{Math.max(val.riders - count, 0)}</span> ({ (Math.max(val.riders - count, 0) === 0) ? '<0.1' : Math.min(Math.max((val.riders - count) / (data[index].sum - (data[index].restaurants.length * count)) * 100, 0), 100).toFixed(1)} %) </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
+
 
                 </div>
             </div>
@@ -196,7 +198,7 @@ const Home = () => {
                                         <p className='tracking-widest text-xl md:text-3xl font-bold text-center'>{val.name}</p>
                                         {totalRiders !== 0 && 
                                         <div className='w-full flex items-center justify-center'>
-                                            <Card className="w-3/4 md:w-[50%] xl:w-[40%] px-8 py-4 rounded-tremor-xl">
+                                            <Card className="w-[85%] md:w-[50%] xl:w-[40%] px-8 py-4 rounded-tremor-xl">
                                                 <Flex className="space-x-6 md:space-x-10 justify-center">
                                                     <Icon icon={CashIcon} color="green" variant="solid" tooltip="Avg. Earnings" size="sm" />
                                                     <div>
