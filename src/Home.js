@@ -11,7 +11,7 @@ import DateTimePicker from './DateTimePicker';
 import ALL from './all.png'
 import KSA from './KSA.jpg'
 import EGY from './EGY.png'
-import { Card, Metric, Text, Flex } from "@tremor/react";
+import { Card, Metric, Text, Flex, CategoryBar, Legend } from "@tremor/react";
 
 const Home = () => {
 
@@ -77,7 +77,7 @@ const Home = () => {
         }
     }, [time])
 
-    const [totalRiders, setTotalRiders] = useState(0);
+    const [totalRiders, setTotalRiders] = useState(false);
 
     useEffect(() => {
         const riders = Array.from(document.querySelectorAll('div.riders p.text-sm span')).map(element => parseInt(element.textContent));
@@ -116,7 +116,7 @@ const Home = () => {
                     </div> 
                 }
 
-                <div className='w-full relative border-2 border-black rounded-2xl h-[90%]'>
+                <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
                     <img src={index === 0 ? zeroIndImg : data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
 
                     <Form />
@@ -138,15 +138,18 @@ const Home = () => {
                 {country !== 'Country' &&  <div className='h-[28px]'></div> }
                 <div className='bg-mrsool-green md:w-3/4 xl:w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-slate-300 scrollbar-thumb-slate-500 xl:h-[90%] p-2 md:p-4 space-y-2 rounded-2xl xl:rounded-r-sm border-2 border-black' key={index}>
 
+                    {totalRiders !== 0 && 
                     <Card className="max-w-xs mx-auto bg-white rounded-2xl mb-4" decoration="top" decorationColor="green">
                         <Flex className="space-x-8 justify-center">
-                            <img src={car} alt='' className='w-12 h-12' />
-                            <div>
-                                <Text>Total Riders</Text>
-                                <Metric className='text-[#3B82F]'>{totalRiders}</Metric>
+                            {/* <img src={car} alt='' className='w-12 h-12' /> */}
+                            <div className='w-full'>
+                                <Text> Total Riders </Text>
+                                <Metric className='text-[#3B82F]'> {totalRiders} </Metric>
+                                <CategoryBar className="mt-4" values={[Math.ceil(totalRiders*0.8), Math.floor(totalRiders*0.2)]} colors={["emerald", "red"]} />
+                                <Legend className="mt-3" categories={["Car", "Bike"]} colors={["emerald", "red"]} />
                             </div>
                         </Flex>
-                    </Card>
+                    </Card> }
 
                     {
                         data[index]?.restaurants.map((val, ind) => (
@@ -172,7 +175,7 @@ const Home = () => {
 
         </div>
 
-        <div className='flex flex-col w-full xl:w-[55%] h-full space-y-4 pb-24'>
+        <div className='flex flex-col w-full xl:w-[55%] xl:h-full space-y-4 pb-24'>
             <div className='xl:tracking-widest uppercase text-xl md:text-4xl font-semibold text-center xl:text-left'>
                 Optimized Delivery Scheduler
             </div>
