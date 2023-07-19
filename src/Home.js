@@ -13,6 +13,8 @@ import KSA from './KSA.jpg'
 import EGY from './EGY.png'
 import { Card, Metric, Text, Flex, CategoryBar, Legend, Icon, Divider } from "@tremor/react";
 import { CashIcon } from "@heroicons/react/outline"
+import Chart from './Chart';
+import Barchart from './CustomBarChart';
 
 const Home = () => {
 
@@ -93,6 +95,13 @@ const Home = () => {
         <div className='flex flex-col items-center justify-center w-full md:w-[90%] xl:w-[70%] space-y-4 xl:space-y-8'>
             <h2 className='text-3xl md:text-5xl font-bold tracking-widest uppercase text-center'> Demand Forecaster </h2>
             <p className='text-justify text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
+        </div>
+
+        <Divider />
+
+        <div className='flex flex-col xl:flex-row w-full items-center justify-center xl:space-x-12 px-1 xl:px-8 space-y-8 xl:space-y-0'>
+            <Chart />
+            <Barchart />
         </div>
 
         <div className='flex flex-col xl:flex-row w-full items-center xl:items-start justify-center xl:space-x-12 xl:h-[80%] px-1 xl:px-8 space-y-8 xl:space-y-0'>

@@ -86,7 +86,7 @@ const Form = () => {
             </div>
 
             <div className='flex flex-col relative w-[30%] md:w-1/4'>
-              <SearchSelect value={selectedDistrict} onValueChange={setSelectedDistrict} placeholder="District" className="tremor-brand-subtle tremor-brand-muted tremor-label focus:outline-none min-w-[100px] lg:min-w-[144px]">
+              <SearchSelect value={selectedDistrict} onValueChange={setSelectedDistrict} placeholder="District" className="tremor-brand-subtle tremor-label focus:outline-none min-w-[100px] lg:min-w-[144px]">
                 {
                   district[city]?.map((val, ind) => (
                     <SearchSelectItem key={ind} value={val} className='bg-white hover:bg-gray-100 fontSize-tremor-label'>
