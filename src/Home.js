@@ -97,10 +97,8 @@ const Home = () => {
             <p className='text-justify text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
-        <Divider />
-
         <div className='flex flex-col xl:flex-row w-full items-center justify-center xl:space-x-12 px-1 xl:px-8 space-y-8 xl:space-y-0'>
-            <Chart />
+            <Chart ordersData={data[index]?.restaurants}/>
             <Barchart />
         </div>
 
@@ -196,6 +194,7 @@ const Home = () => {
 
                 <div className='w-full flex flex-col items-center overflow-y-auto scrollbar-thin scrollbar-track-mrsool-green scrollbar-thumb-gray-200 h-full p-1 lg:p-4 py-8 space-y-4'>
                     {
+                        
                         data[index]?.restaurants.map((val, ind) => {
                             const isExpanded = expanded[ind] || false;
                             return (
@@ -212,7 +211,7 @@ const Home = () => {
                                                     <Icon icon={CashIcon} color="green" variant="solid" tooltip="Avg. Earnings" size="sm" />
                                                     <div>
                                                         <Text className='text-tremor-title'>Average Earnings</Text>
-                                                        <Metric>SAR <span className='font-bold text-tremor-xlarge'> { (() => [25, 30, 35][Math.floor(Math.random() * 3)])() } </span></Metric>
+                                                        <Metric>SAR <span className='font-bold text-tremor-xlarge'> { (() => parseInt( val.ridersDetails.reduce((total, rider) => total + parseInt(rider.earning), 0) / val.ridersDetails.length ) )() } </span></Metric>
                                                     </div>
                                                 </Flex>
                                             </Card>
