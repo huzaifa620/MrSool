@@ -8,8 +8,8 @@ const Chart = ({ ordersData }) => {
   React.useEffect(() => {
     setLoading(true)
     const updatedList = ordersData.map((item, index) => ({
-      name: item.name,
-      value: item.riders,
+      name: item?.name,
+      value: item?.riders,
       icon: () => <img src={item.imgUrl} className="w-5 h-5 rounded-full mr-2.5" />,
     }));
     setData(updatedList);

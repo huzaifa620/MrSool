@@ -82,13 +82,25 @@ const Home = () => {
     }, [time])
 
     const [totalRiders, setTotalRiders] = useState(false);
-
     useEffect(() => {
         const riders = Array.from(document.querySelectorAll('div.riders p.text-sm span')).map(element => parseInt(element.textContent));
         const sum = riders.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
         setTotalRiders(sum);
     }, [time, index, zoomLevel]);
 
+    const [avgEarnings, setAvgEarning] = useState([]);
+    const [chartLoading, setChartLoading] = useState(false)
+    useEffect(() => {
+      setTimeout(() => {
+        setChartLoading(true)
+        const earnings = Array.from(document.querySelectorAll('span.font-bold.text-tremor-xlarge')).map(element => parseInt(element.textContent));
+        setAvgEarning(earnings);
+      }, 100);
+    }, [index]);
+    useEffect(() => {
+        setChartLoading(false)
+    }, [avgEarnings])
+    
   return (
     <div className='flex flex-col items-center w-full h-screen space-y-8 xl:space-y-24 p-2 pt-[10%] xl:pt-[6%]'>
 
@@ -97,9 +109,9 @@ const Home = () => {
             <p className='text-justify text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
-        <div className='flex flex-col xl:flex-row w-full items-center justify-center xl:space-x-12 px-1 xl:px-8 space-y-8 xl:space-y-0'>
+        <div className='flex flex-col w-full items-center justify-center xl:space-x-12 px-1 xl:px-8 space-y-8'>
             <Chart ordersData={data[index]?.restaurants}/>
-            <Barchart />
+            <Barchart avgData={avgEarnings && avgEarnings.slice(1)} ordersData={data[index]?.restaurants} />
         </div>
 
         <div className='flex flex-col xl:flex-row w-full items-center xl:items-start justify-center xl:space-x-12 xl:h-[80%] px-1 xl:px-8 space-y-8 xl:space-y-0'>

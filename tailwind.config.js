@@ -98,6 +98,9 @@ module.exports = {
         "tremor-large": ["2.25rem", { lineHeight: "3rem" }],
         "tremor-xlarge": ["3.5rem", { lineHeight: "3.5rem" }],
       },
+      BarList: {
+        "tremor-content-emphasis": "ffffff"
+      }
     },
   },
   safelist: [
