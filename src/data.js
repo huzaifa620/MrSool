@@ -7,6 +7,16 @@ import cairo from './cairo.png'
 import alexandria from './alexandria.png'
 import mecca from './mecca.png'
 import jeddah from './jeddah.png'
+import riyadh from './riyadh.png'
+import medina from './medina.png'
+import dammam from './dammam.png'
+import taif from './taif.png'
+import tabuk from './tabuk.png'
+import giza from './giza.png'
+import sharmelsheikh from './sharmelsheikh.png'
+import luxor from './luxor.png'
+import aswan from './aswan.png'
+import hurghada from './hurghada.png'
 
 import spoon from './cutlery.png'
 
@@ -22,6 +32,7 @@ const data = [
         ], 
         sum: 0
     },
+
     {
         image: img1,
         restaurants: [
@@ -441,7 +452,67 @@ const data = [
     },
 
     {
+        image: riyadh,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
         image: mecca,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: medina,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: dammam,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: taif,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: tabuk,
         restaurants: [
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
@@ -474,7 +545,67 @@ const data = [
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
         ], 
         sum: 0
-    }
+    },
+
+    {
+        image: giza,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: sharmelsheikh,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: luxor,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: aswan,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: hurghada,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
 ]
 
 export default data
