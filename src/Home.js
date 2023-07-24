@@ -109,7 +109,7 @@ const Home = () => {
             <p className='text-justify text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
-        <div className='flex flex-col w-full items-center justify-center xl:space-x-12 px-1 xl:px-8 space-y-8'>
+        <div className='flex flex-col w-full items-center justify-center px-1 xl:px-8 space-y-8'>
             <Chart ordersData={data[index]?.restaurants}/>
             <Barchart avgData={avgEarnings && avgEarnings.slice(1)} ordersData={data[index]?.restaurants} />
         </div>

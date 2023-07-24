@@ -5,10 +5,6 @@ import img3 from './J3.jpg'
 
 import cairo from './cairo.png'
 import alexandria from './alexandria.png'
-import alwakrah from './alwakrah.jpg'
-import doha from './doha.png'
-import abudhabi from './abudhabi.png'
-import dubai from './dubai.png'
 import mecca from './mecca.png'
 import jeddah from './jeddah.png'
 
@@ -446,54 +442,6 @@ const data = [
 
     {
         image: mecca,
-        restaurants: [
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-        ], 
-        sum: 0
-    },
-
-    {
-        image: dubai,
-        restaurants: [
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-        ], 
-        sum: 0
-    },
-
-    {
-        image: abudhabi,
-        restaurants: [
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-        ], 
-        sum: 0
-    },
-
-    {
-        image: doha,
-        restaurants: [
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-        ], 
-        sum: 0
-    }, 
-
-    {
-        image: alwakrah,
         restaurants: [
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
