@@ -15,6 +15,7 @@ import { Card, Metric, Text, Flex, CategoryBar, Legend, Icon, Divider } from "@t
 import { CashIcon } from "@heroicons/react/outline"
 import Chart from './Chart';
 import Barchart from './CustomBarChart';
+import PieChart from './PieChart';
 
 const Home = () => {
 
@@ -109,8 +110,11 @@ const Home = () => {
             <p className='text-justify text-sm md:text-base'>MRSOOL, a delivery service platform, relies on demand forecasting for various aspects of its operations. By analyzing historical data, market trends, and other relevant factors, MRSOOL can estimate future demand and plan accordingly. This helps in efficient resource planning, including the allocation of delivery drivers, vehicles, and logistics operations. Capacity management is also improved as MRSOOL can adjust its operational capacity to match anticipated demand levels. Additionally, demand forecasting aids in inventory management, ensuring optimal stock levels while minimizing excess inventory. It also assists in optimizing service levels by anticipating peak demand periods and allocating additional resources accordingly. Pricing and promotional strategies can be refined based on demand patterns, leading to increased revenue and resource utilization.</p>
         </div>
 
-        <div className='flex flex-col w-full items-center justify-center px-1 xl:px-8 space-y-8'>
-            <Chart ordersData={data[index]?.restaurants}/>
+        <div className='flex flex-col w-full items-center justify-center px-1 lg:px-4 xl:px-8 space-y-8'>
+            <div className='flex flex-col lg:flex-row items-center justify-between lg:space-x-12 space-y-12 lg:space-y-0 w-full xl:w-3/4'>
+                <Chart ordersData={data[index]?.restaurants}/>
+                <PieChart />
+            </div>
             <Barchart avgData={avgEarnings && avgEarnings.slice(1)} ordersData={data[index]?.restaurants} />
         </div>
 
