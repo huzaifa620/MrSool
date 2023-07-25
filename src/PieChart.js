@@ -1,31 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Title, Subtitle } from "@tremor/react";
 import ReactApexChart from 'react-apexcharts';
 
-function PieChart({avgData, ordersData}) {
-  
-  const [data, setData] = React.useState([]);
-  const [loading, setLoading] = React.useState(false)
-  const [profitArr, setProfitArr] = React.useState([])
-  const [restaurantNames, setRestaurantNames] = React.useState([])
-  
-  React.useEffect(() => {
-    setLoading(true)
+function PieChart({ avgData, ordersData }) {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [profitArr, setProfitArr] = useState([]);
+  const [restaurantNames, setRestaurantNames] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
     if (avgData) {
       const updatedList = avgData?.map((item, index) => ({
         name: ordersData[index]?.name,
-        profit: item*ordersData[index]?.riders*0.15,
+        profit: item * ordersData[index]?.riders * 0.15,
       }));
       setData(updatedList);
     }
   }, [avgData]);
-  
-  React.useEffect(() => {
-    setProfitArr(data.map((item) => item.profit))
-    setRestaurantNames(data.map((item) => item.name))
-    setLoading(false)
-  }, [data])
-  
+
+  useEffect(() => {
+    setProfitArr(data.map((item) => item.profit));
+    setRestaurantNames(data.map((item) => item.name));
+    setLoading(false);
+  }, [data]);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const pieChartData = {
     series: profitArr,
     options: {
@@ -34,35 +43,42 @@ function PieChart({avgData, ordersData}) {
         type: 'pie',
       },
       labels: restaurantNames,
-      
+
       plotOptions: {
         pie: {
           dataLabels: {
-            offset: -15
-          }
-        }
-      },
-      dataLabels: {
-        formatter(val, opts) {
-          const name = opts.w.globals.labels[opts.seriesIndex];
-          const realProfit = profitArr[opts.seriesIndex]; 
-          return [ name, `SAR ${realProfit.toFixed(1)}`, `${val.toFixed(1)} %` ];
-        }
+            offset: isMobile ? -1 : -15,
+            formatter(val, opts) {
+              if (isMobile) {
+                const realProfit = profitArr[opts.seriesIndex];
+                return [`SAR ${realProfit.toFixed(1)}`, `${val.toFixed(1)} %`];
+              } else {
+                const name = opts.w.globals.labels[opts.seriesIndex];
+                const realProfit = profitArr[opts.seriesIndex];
+                return [name, `SAR ${realProfit.toFixed(1)}`, `${val.toFixed(1)} %`];
+              }
+            },
+          },
+        },
       },
       legend: {
-        show: true
-      }
+        show: !isMobile,
+      },
     },
   };
 
   return (
-      <Card className="rounded-tremor-xl bg-gray-50 hover:bg-gray-100 shadow-2xl space-y-4">
-        <Title> Predicted Profit </Title>
-        <Title> SAR <span className='font-bold text-6xl'> {profitArr.reduce((total, value) => total + value, 0).toFixed(1)} </span> </Title>
-        <Subtitle className="tracking-wider">
-          At the profit margin of 15% per order
-        </Subtitle>
-        <ReactApexChart options={pieChartData.options} series={pieChartData.series} type="pie" />
+    <Card className="rounded-tremor-xl bg-gray-50 hover:bg-gray-100 shadow-2xl space-y-4">
+      <Title> Predicted Profit </Title>
+      <Title>
+        SAR <span className='font-bold text-6xl'> {profitArr.reduce((total, value) => total + value, 0).toFixed(1)} </span>
+      </Title>
+      <Subtitle className="tracking-wider">
+        At the profit margin of 15% per order
+      </Subtitle>
+
+      <ReactApexChart options={pieChartData.options} series={pieChartData.series} type="pie" />
+
     </Card>
   );
 }
