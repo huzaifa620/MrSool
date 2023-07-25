@@ -111,7 +111,7 @@ const Home = () => {
         </div>
 
         <div className='flex flex-col w-full xl:w-[80%] items-center justify-center px-1 lg:px-4 xl:px-8 space-y-16'>
-            <div className='flex flex-col lg:flex-row items-center justify-center lg:space-x-[10%] space-y-12 lg:space-y-0 w-full'>
+            <div className='flex flex-col 2xl:flex-row items-center justify-center 2xl:space-x-[10%] space-y-12 2xl:space-y-0 w-full'>
                 <Chart ordersData={data[index]?.restaurants}/>
                 <PieChart avgData={avgEarnings && avgEarnings.slice(1)} ordersData={data[index]?.restaurants} />
             </div>

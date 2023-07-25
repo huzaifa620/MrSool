@@ -26,7 +26,7 @@ const CustomBarChart = ({avgData, ordersData}) => {
   }, [data])
 
   return (
-    <Card className="rounded-tremor-xl bg-gray-50 hover:bg-gray-100 shadow-2xl">
+    <Card className="rounded-tremor-xl bg-gray-50 hover:bg-gray-100 shadow-2xl px-3 lg:px-6">
       <Title>Average Earning of riders </Title>
       <Subtitle className="tracking-wider">
         MrSool has assessed the average earnings of riders in each restaurant.
@@ -38,7 +38,7 @@ const CustomBarChart = ({avgData, ordersData}) => {
         categories={["Average Earnings"]}
         colors={["green"]}
         valueFormatter={dataFormatter}
-        yAxisWidth={48}
+        yAxisWidth={56}
       />
     </Card>
   )
