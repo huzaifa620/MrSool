@@ -1,21 +1,6 @@
 import { Card, Title, BarChart, Subtitle } from "@tremor/react";
 import React from "react";
 
-const chartdata = [
-  {
-    name: "Amphibians",
-    "Average Earnings": 30,
-  },
-  {
-    name: "Birds",
-    "Average Earnings": 35,
-  },
-  {
-    name: "Crustaceans",
-    "Average Earnings": 40,
-  },
-];
-
 const dataFormatter = (number) => {
   return "SAR " + Intl.NumberFormat("us").format(number).toString();
 };
