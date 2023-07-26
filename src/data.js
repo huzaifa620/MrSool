@@ -18,6 +18,14 @@ import luxor from './luxor.png'
 import aswan from './aswan.png'
 import hurghada from './hurghada.png'
 
+import alBalad from './alBalad.png'
+import alHamra from './alHamra.png'
+import alNuzhah from './alNuzhah.png'
+import alSalamah from './alSalamah.png'
+import alSharafeyah from './alSharafeyah.png'
+import alOlayah from './alOlayah.png'
+
+
 import spoon from './cutlery.png'
 
 const data = [
@@ -597,6 +605,78 @@ const data = [
 
     {
         image: hurghada,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alBalad,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alSharafeyah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alHamra,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alNuzhah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alSalamah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alOlayah,
         restaurants: [
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
             {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
