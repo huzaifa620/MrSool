@@ -28,7 +28,7 @@ function PieChart({ avgData, ordersData }) {
 
   useEffect(() => {
     function handleResize() {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= 520); // Adjust the breakpoint as needed
     }
     window.addEventListener('resize', handleResize);
     handleResize();
@@ -43,21 +43,21 @@ function PieChart({ avgData, ordersData }) {
         type: 'pie',
       },
       labels: restaurantNames,
-
+      dataLabels: {
+        enabled: true,
+        formatter: function (val, opts) {
+          const name = opts.w.globals.labels[opts.seriesIndex];
+          const realProfit = profitArr[opts.seriesIndex];
+          const percentage = val.toFixed(1);
+          return isMobile
+            ? [realProfit.toFixed(1)]
+            : [`${name}`, `SAR ${realProfit.toFixed(1)}`, `${percentage} %`];
+        },
+      },
       plotOptions: {
         pie: {
           dataLabels: {
             offset: isMobile ? -1 : -15,
-            formatter(val, opts) {
-              if (isMobile) {
-                const realProfit = profitArr[opts.seriesIndex];
-                return [`SAR ${realProfit.toFixed(1)}`, `${val.toFixed(1)} %`];
-              } else {
-                const name = opts.w.globals.labels[opts.seriesIndex];
-                const realProfit = profitArr[opts.seriesIndex];
-                return [name, `SAR ${realProfit.toFixed(1)}`, `${val.toFixed(1)} %`];
-              }
-            },
           },
         },
       },
@@ -66,6 +66,7 @@ function PieChart({ avgData, ordersData }) {
       },
     },
   };
+  
 
   return (
     <Card className="rounded-tremor-xl bg-gray-50 hover:bg-gray-100 shadow-2xl space-y-4">
