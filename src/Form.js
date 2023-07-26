@@ -13,32 +13,30 @@ const Form = () => {
 
   const [district, setDistrict] = useState( {
     "City": [],
-    "Jeddah": ["Al-Balad", "Al-Sharafiyyah", "Al-Hamra", "Al-Nuzhah", "Al-Salamah"],
-    "Riyadh": ["Al-Olaya", "Al-Malaz", "Al-Bathaa", "Al-Nahda", "Al-Woroud"],
-    "Mecca": ["Al-Hindawiyyah", "Al-Mansour", "Al-Shubaikah", "Al-Hujun", "Al-Zahir"],
-    "Medina": ["Al-Haram", "Al-Madina Al-Munawwarah", "Al-Salam", "Al-Qiblatain", "Al-Aqiq"],
-    "Dammam": ["Al-Adama", "Al-Anoud", "Al-Shati", "Al-Rakah", "Al-Danah"],
-    "Taif": ["Al-Hawiyah", "Al-Ward", "Al-Hada", "Al-Qurayyat", "Al-Shafa"],
-    "Tabuk": ["Al-Rawdah", "Al-Sharafiyah", "Al-Qadisiyah", "Al-Wajh", "Al-Aqiq"],
-    "Cairo": ["Zamalek", "Maadi", "Heliopolis", "Dokki", "Giza"],
-    "Alexandria": ["Montaza", "Smouha", "Raml Station", "Miami", "Al-Montaza"],
-    "Giza": ["Dokki", "Mohandessin", "Agouza", "Haram", "Faisal"],
-    "Sharm El-Sheikh": ["Naama Bay", "Ras Um Sid", "Shark's Bay", "Hadaba", "Nabq"],
-    "Luxor": ["East Bank", "West Bank", "Karnak", "Al-Gurna", "Al-Toud"],
-    "Aswan": ["Aswan City", "Elephantine Island", "Nubian Village", "Kom Ombo", "Abu Simbel"],
-    "Hurghada": ["El Dahar", "Sakkala", "Makadi Bay", "Soma Bay", "El Gouna"],
+    "Jeddah": {"Al-Balad": 18, "Al-Sharafiyyah": 19, "Al-Hamra": 20, "Al-Nuzhah": 21, "Al-Salamah": 22},
+    "Riyadh": {"Al-Olaya": 23, "Al-Malaz": 24, "Al-Bathaa": 25, "Al-Nahda": 26, "Al-Woroud": 27},
+    "Mecca": {"Al-Hindawiyyah":28, "Al-Mansour": 29, "Al-Shubaikah": 30, "Al-Hujun": 31, "Al-Zahir": 32},
+    "Medina": {"Al-Haram": 33, "Al-Madina Al-Munawwarah": 34, "Al-Salam": 35, "Al-Qiblatain": 36, "Al-Aqiq": 37},
+    "Dammam": {"Al-Adama": 38, "Al-Anoud": 39, "Al-Shati": 40, "Al-Rakah": 41, "Al-Danah": 42},
+    "Taif": {"Al-Hawiyah": 43, "Al-Ward": 44, "Al-Hada": 45, "Al-Qurayyat": 46, "Al-Shafa": 47},
+    "Tabuk": {"Al-Rawdah": 48, "Al-Sharafiyah": 49, "Al-Qadisiyah": 50, "Al-Wajh": 51, "Al-Aqiq": 52},
+    "Cairo": {"Zamalek": 53, "Maadi": 54, "Heliopolis": 55, "Dokki": 56, "Giza": 57},
+    "Alexandria": {"Montaza": 58, "Smouha": 59, "Raml Station": 60, "Miami": 61, "Al-Montaza": 62},
+    "Giza": {"Dokki": 63, "Mohandessin": 64, "Agouza": 65, "Haram": 66, "Faisal": 67},
+    "Sharm El-Sheikh": {"Naama Bay": 68, "Ras Um Sid": 69, "Shark's Bay": 70, "Hadaba": 71, "Nabq": 72},
+    "Luxor": {"East Bank": 73, "West Bank": 74, "Karnak": 75, "Al-Gurna": 76, "Al-Toud": 77},
+    "Aswan": {"Aswan City": 78, "Elephantine Island": 79, "Nubian Village": 80, "Kom Ombo": 81, "Abu Simbel": 82},
+    "Hurghada": {"El Dahar": 83, "Sakkala": 84, "Makadi Bay": 85, "Soma Bay": 86, "El Gouna": 87},
   }  
-   );
+  );
 
     useEffect(() => {
       setIndex(cities[country][city])
-      console.log(index)
     }, [city, country, cities]);
 
     useEffect(() => {
-      //setIndex(cities[country][city])
-      console.log( `17+${cities[country][city]}-3+${district[city].indexOf(selectedDistrict)}` )
-    }, [selectedDistrict]);
+      setIndex(district[city][selectedDistrict])
+    }, [selectedDistrict])
     
     return (
       
@@ -87,15 +85,14 @@ const Form = () => {
 
             <div className='flex flex-col relative w-[30%] md:w-1/4'>
               <SearchSelect value={selectedDistrict} onValueChange={setSelectedDistrict} placeholder="District" className="tremor-brand-subtle tremor-label focus:outline-none min-w-[100px] lg:min-w-[144px]">
-                {
-                  district[city]?.map((val, ind) => (
-                    <SearchSelectItem key={ind} value={val} className='bg-white hover:bg-gray-100 fontSize-tremor-label'>
-                      {val}
-                    </SearchSelectItem>    
-                  ))
-                }
+                {Object.keys(district[city]).map((districtName) => (
+                  <SearchSelectItem key={district[city][districtName]} value={districtName} className='bg-white hover:bg-gray-100 fontSize-tremor-label'>
+                    {districtName}
+                  </SearchSelectItem>
+                ))}
               </SearchSelect>
             </div>
+
         </div>
     </div>
 
