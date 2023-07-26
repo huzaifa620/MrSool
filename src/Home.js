@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
-import bike from './motorbike.png'
-import car from './suv.png'
+import bike from './icons/motorbike.png'
+import car from './icons/suv.png'
 import { Context } from './Context';
 import data from './data.js'
 import 'react-datepicker/dist/react-datepicker.css';
@@ -8,9 +8,9 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Form from './Form';
 import DateTimePicker from './DateTimePicker';
-import ALL from './all.png'
-import KSA from './KSA.jpg'
-import EGY from './EGY.png'
+import ALL from './mapPictures/all.png'
+import KSA from './mapPictures/KSA.jpg'
+import EGY from './mapPictures/EGY.png'
 import { Card, Metric, Text, Flex, CategoryBar, Legend, Icon, Divider } from "@tremor/react";
 import { CashIcon } from "@heroicons/react/outline"
 import Chart from './Chart';
