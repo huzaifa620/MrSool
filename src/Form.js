@@ -6,7 +6,7 @@ const Form = () => {
 
   const {country, setCountry, city, setCity, index, setIndex, selectedDistrict, setSelectedDistrict}  = useContext(Context)
 
-  const [cities, setCities] = useState({'Country': {'': 0}, 'KSA' : {'Jeddah':4, 'Riyadh':5, 'Mecca':6, 'Medina':7, 'Dammam':8, 'Taif':9, 'Tabuk':10}, 'EGY': {'Cairo': 11, 'Alexandria': 12, 'Giza': 13, 'Sharm El-Sheikh': 14, 'Luxor': 15, 'Aswan': 16, 'Hurghada': 17} })
+  const [cities, setCities] = useState({'Country': {'': 0}, 'KSA' : {'Jeddah': 4, 'Riyadh': 5, 'Mecca': 6, 'Medina': 7, 'Dammam': 8, 'Taif': 9, 'Tabuk': 10}, 'EGY': {'Cairo': 11, 'Alexandria': 12, 'Giza': 13, 'Sharm El-Sheikh': 14, 'Luxor': 15, 'Aswan': 16, 'Hurghada': 17} })
 
   const [drop, setDrop] = useState(false)
   const [dropCont, setDropCont] = useState(false)
@@ -20,9 +20,6 @@ const Form = () => {
     "Dammam": ["Al-Adama", "Al-Anoud", "Al-Shati", "Al-Rakah", "Al-Danah"],
     "Taif": ["Al-Hawiyah", "Al-Ward", "Al-Hada", "Al-Qurayyat", "Al-Shafa"],
     "Tabuk": ["Al-Rawdah", "Al-Sharafiyah", "Al-Qadisiyah", "Al-Wajh", "Al-Aqiq"],
-    "Buraidah": ["Al-Oraija", "Al-Faisaliyah", "Al-Rawabi", "Al-Khaleej", "Al-Shamal"],
-    "Abha": ["Al-Soudah", "Al-Muftaha", "Al-Majardah", "Al-Sawdah", "Al-Kuday"],
-    "Al-Khobar": ["Al-Ulaya", "Al-Rakah", "Al-Salamah", "Al-Bustan", "Al-Turki"],
     "Cairo": ["Zamalek", "Maadi", "Heliopolis", "Dokki", "Giza"],
     "Alexandria": ["Montaza", "Smouha", "Raml Station", "Miami", "Al-Montaza"],
     "Giza": ["Dokki", "Mohandessin", "Agouza", "Haram", "Faisal"],
@@ -30,15 +27,18 @@ const Form = () => {
     "Luxor": ["East Bank", "West Bank", "Karnak", "Al-Gurna", "Al-Toud"],
     "Aswan": ["Aswan City", "Elephantine Island", "Nubian Village", "Kom Ombo", "Abu Simbel"],
     "Hurghada": ["El Dahar", "Sakkala", "Makadi Bay", "Soma Bay", "El Gouna"],
-    "Port Said": ["Port Fouad", "Al-Manakh", "Al-Zohour", "Al-Dawahy", "Al-Gomhoriya"],
-    "Suez": ["Al-Arbaeen", "Al-Qadisiyah", "Al-Mansheya", "Al-Jumhuriyah", "Al-Ganayen"],
-    "Mansoura": ["Al-Gomhuriya", "Al-Mahallah Al-Kubra", "Dekernes", "Talkha", "Mit Ghamr"]
   }  
    );
 
     useEffect(() => {
       setIndex(cities[country][city])
-    }, [city, country, cities, selectedDistrict]);
+      console.log(index)
+    }, [city, country, cities]);
+
+    useEffect(() => {
+      //setIndex(cities[country][city])
+      console.log( `17+${cities[country][city]}-3+${district[city].indexOf(selectedDistrict)}` )
+    }, [selectedDistrict]);
     
     return (
       

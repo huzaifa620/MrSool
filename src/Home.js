@@ -133,7 +133,7 @@ const Home = () => {
 
                 {country !== 'Country' && 
                     <div className='w-full justify-center xl:justify-start xl:px-6 flex items-center xl:tracking-[0.2em] space-x-2 xl:space-x-3'> 
-                        <span className='bg-mrsool-green hover:bg-mrsool-green-hover p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {country === 'KSA' ? 'Saudi Arabia': 'Egypt'} </span>  
+                        <span className='bg-mrsool-green hover:bg-mrsool-green-hover p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {country === 'KSA' ? 'Saudi Arabia': 'Egypt'} </span>
                         <span className='font-bold'>&gt;</span>  
                         <span className='bg-mrsool-green hover:bg-mrsool-green-hover p-1 rounded-full text-xs xl:text-sm text-white px-4 cursor-pointer'> {city} </span>  
                         <span className='font-bold'>&gt;</span>
@@ -142,7 +142,7 @@ const Home = () => {
                 }
 
                 <div className='w-full relative border-2 border-black rounded-2xl h-[90%] overflow-hidden'>
-                    <img src={index === 0 ? zeroIndImg : data[index].image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
+                    <img src={index === 0 ? zeroIndImg : data[index]?.image} alt='' className='w-full h-full object-cover rounded-2xl' style={{ transform: `scale(${zoomLevel})` }} />
 
                     <Form />
 
@@ -276,7 +276,6 @@ const Home = () => {
                         })
                     }
                 </div>
-
 
             </div>
         </div>
