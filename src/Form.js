@@ -14,9 +14,9 @@ const Form = () => {
   const [district, setDistrict] = useState( {
     "City": [],
     "Jeddah": {"Al-Balad": 18, "Al-Sharafiyyah": 19, "Al-Hamra": 20, "Al-Nuzhah": 21, "Al-Salamah": 22},
-    "Riyadh": {"Al-Olaya": 23, "Al-Malaz": 24, "Al-Bathaa": 25, "Al-Nahda": 26, "Al-Woroud": 27},
+    "Riyadh": {"Al-Olaya": 23, "Al-Malaz": 24, "Al-Bathaa": 25, "Al-Nahda": 26, "Al-Murabba": 27},
     "Mecca": {"Al-Hindawiyyah":28, "Al-Mansour": 29, "Al-Shubaikah": 30, "Al-Hujun": 31, "Al-Zahir": 32},
-    "Medina": {"Al-Haram": 33, "Al-Madina Al-Munawwarah": 34, "Al-Salam": 35, "Al-Qiblatain": 36, "Al-Aqiq": 37},
+    "Medina": {"Al-Haram": 33, "Al-Aridh": 34, "Al-Salam": 35, "Al-Qiblatayn": 36, "Al-Aqiq": 37},
     "Dammam": {"Al-Adama": 38, "Al-Anoud": 39, "Al-Shati": 40, "Al-Rakah": 41, "Al-Danah": 42},
     "Taif": {"Al-Hawiyah": 43, "Al-Ward": 44, "Al-Hada": 45, "Al-Qurayyat": 46, "Al-Shafa": 47},
     "Tabuk": {"Al-Rawdah": 48, "Al-Sharafiyah": 49, "Al-Qadisiyah": 50, "Al-Wajh": 51, "Al-Aqiq": 52},
