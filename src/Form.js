@@ -73,7 +73,7 @@ const Form = () => {
               </button>
               
               {drop && <div id="dropdownSmall" className="z-20">
-                <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col h-auto items-center justify-center w-full absolute bg-white divide-y divide-gray-100 rounded shadow" aria-labelledby="dropdown-button">
+                <ul className="py-2 z-20 text-xs md:text-sm text-black flex flex-col h-[112px] md:h-auto overflow-y-auto items-center justify-center w-full absolute bg-white divide-y divide-gray-100 rounded shadow" aria-labelledby="dropdown-button">
 
                   {Object.keys(cities[country])?.map((key, val) => (
                     <li className='w-full' key={val}>
@@ -86,7 +86,7 @@ const Form = () => {
             </div>
 
             <div className='flex flex-col relative w-[30%] md:w-1/4'>
-              <SearchSelect value={selectedDistrict} onValueChange={setSelectedDistrict} placeholder="District" className="tremor-brand-subtle tremor-label focus:outline-none min-w-[100px] lg:min-w-[144px]">
+              <SearchSelect value={selectedDistrict} onValueChange={setSelectedDistrict} placeholder="District" className="tremor-brand-subtle tremor-label focus:outline-none min-w-[100px] lg:min-w-[144px] z-30">
                 {Object.keys(district[city]).map((districtName) => (
                   <SearchSelectItem key={district[city][districtName]} value={districtName} className='bg-white hover:bg-gray-100 fontSize-tremor-label'>
                     {districtName}
