@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Title, Subtitle } from "@tremor/react";
+import { Card, Title, Subtitle, Flex, BadgeDelta, } from "@tremor/react";
 import ReactApexChart from 'react-apexcharts';
 
 function PieChart({ avgData, ordersData }) {
@@ -70,7 +70,12 @@ function PieChart({ avgData, ordersData }) {
 
   return (
     <Card className="rounded-tremor-xl bg-gray-50 hover:bg-gray-100 shadow-2xl space-y-4">
-      <Title> Predicted Profit </Title>
+      <div className='flex items-center space-x-4'>
+        <Title> Predicted Profit </Title>
+        <BadgeDelta deltaType="moderateIncrease" isIncreasePositive={true} size="xs">
+          +12.3%
+        </BadgeDelta>
+      </div>
       <Title>
         SAR <span className='font-bold text-6xl'> {profitArr.reduce((total, value) => total + value, 0).toFixed(1)} </span>
       </Title>

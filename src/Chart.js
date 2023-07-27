@@ -1,4 +1,5 @@
-import { BarList, Card, Title, Bold, Flex, Text } from "@tremor/react";
+import { BarList, Card, Title, Bold, Flex, Text, Badge } from "@tremor/react";
+import { StatusOnlineIcon } from "@heroicons/react/outline";
 import React from "react";
 
 const Chart = ({ ordersData }) => {
@@ -21,7 +22,10 @@ const Chart = ({ ordersData }) => {
 
   return (
     <Card className="max-w-lg rounded-tremor-xl bg-gray-50 hover:bg-gray-100 shadow-2xl">
-      <Title>Riders Analytics</Title>
+      <div className="flex items-center min-w-full justify-between">
+        <Title>Riders Analytics</Title>
+        <Badge icon={StatusOnlineIcon} className="bg-[rgba(59,130,246,.5)] bg-opacity-50">live</Badge>
+      </div>
       <Flex className="mt-4">
         <Text>
           <Bold>Restaurant</Bold>

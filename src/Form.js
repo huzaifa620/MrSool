@@ -31,12 +31,10 @@ const Form = () => {
   );
 
     useEffect(() => {
-      console.log(index)
       setIndex(cities[country][city])
     }, [city, country, cities]);
 
     useEffect(() => {
-      console.log(index)
       setIndex(district[city][selectedDistrict])
     }, [selectedDistrict])
     

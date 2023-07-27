@@ -46,13 +46,126 @@ const data = [
     {
         image: img0,
         restaurants: [
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
-        ], 
-        sum: 0
+            {
+                name: "Asian Food Restaurant",
+                riders: 14,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
+                    { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
+                    { name: "Abdullah Al-Saud", time: '20', earning: "30", type: 0 },
+                    { name: "Nasser Al-Fahad", time: "25", earning: "40", type: 1 },
+                    { name: "Saad Al-Omari", time: '20', earning: "30", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                ],
+                imgUrl: 'https://img.freepik.com/premium-vector/fire-wok-asian-food-restaurant-logo_497517-604.jpg?w=2000'
+            },
+            {
+                name: "Yasmin Mall",
+                riders: 13, 
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
+                    { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                    { name: "Abdullah Al-Saud", time: '20', earning: "30", type: 0 },
+                    { name: "Nasser Al-Fahad", time: "25", earning: "40", type: 1 },
+                    { name: "Saad Al-Omari", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8Vc0WrM8mO0xfTjYzxUaDEvq1DPaoc1iag&usqp=CAU'
+            },
+            {
+                name: "McDonald' ALSAMER",
+                riders: 12, 
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '20', earning: "30", type: 0 },
+                    { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
+                    { name: "Abdullah Al-Saud", time: '20', earning: "30", type: 0 },
+                    { name: "Nasser Al-Fahad", time: "25", earning: "40", type: 1 },
+                    { name: "Saad Al-Omari", time: '20', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                ],
+                imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxoprno9xjr_va3qkqnt5xptcAeYSKF16nle4Sr-IvHO_YdC4c5X26wv56YGQm_76mYE&usqp=CAU" 
+            },
+            {
+                name: "Sultan Restaurant", 
+                riders: 15, 
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
+                    { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
+                    { name: "Abdullah Al-Saud", time: '20', earning: "30", type: 0 },
+                    { name: "Nasser Al-Fahad", time: "25", earning: "40", type: 1 },
+                    { name: "Saad Al-Omari", time: '20', earning: "30", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 }
+                ], 
+                imgUrl: "https://i.pinimg.com/originals/fa/52/4d/fa524dff3190583560e5730c506ad6a8.jpg"
+            },
+            {
+                name: "Shrimp Shack", 
+                riders: 17, 
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
+                    { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
+                    { name: "Abdullah Al-Saud", time: '20', earning: "30", type: 0 },
+                    { name: "Nasser Al-Fahad", time: "25", earning: "40", type: 1 },
+                    { name: "Saad Al-Omari", time: '20', earning: "30", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                ], 
+                imgUrl: "https://static.spotapps.co/website_images/ab_websites/109590_website/logo.png"
+            },
+            {
+                name: "Asmahan Restaurant", 
+                riders: 13, 
+                ridersDetails:[
+                    { name: "Muhammad Baqar", time: '20', earning: "30", type: 1 },
+                    { name: "Hashim Sarwar", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Abdullah Al-Saud", time: '20', earning: "30", type: 0 },
+                    { name: "Nasser Al-Fahad", time: "25", earning: "40", type: 1 },
+                    { name: "Saad Al-Omari", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: "https://www.hyattrestaurants.com/uploaded/restaurant_logos/DMMGH-L006c-stk-TM-color-CMYK-png.png"
+            },
+            {
+                name: "Barn's Coffee",
+                riders: 19,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://barns.com.sa/public/assets/store/themes/ecomm/images/Logo_green.png'
+            },
+            {
+                name: "Starbucks",
+                riders: 20,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/800px-Starbucks_Corporation_Logo_2011.svg.png'
+            },
+            {
+                name: "Gloria Jean's Coffees",
+                riders: 12,
+                ridersDetails: [
+                    { name: "Muhammad Baqar", time: '30', earning: "30", type: 1 },
+                    { name: "Khalid Al-Shehri", time: "25", earning: "40", type: 0 },
+                    { name: "Nasser Al-Fahad", time: '20', earning: "30", type: 1 },
+                    { name: "Saad Al-Omari", time: "25", earning: "40", type: 1 },
+                    { name: "Mansour Al-Mutairi", time: '20', earning: "30", type: 1 },
+                ],
+                imgUrl: 'https://www.casuarinasquare.com.au/wp-content/uploads/2022/03/logo-gloria-jeans-1.jpg'
+            },
+        ],
+        sum: 135
     },
 
     {
