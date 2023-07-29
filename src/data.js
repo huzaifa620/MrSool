@@ -28,7 +28,6 @@ import alMalaz from './mapPictures/alMalaz.png'
 import alBathaa from './mapPictures/alBathaa.png'
 import alNahdah from './mapPictures/alNahdah.png'
 import alMurabba from './mapPictures/alMurabba.png'
-
 import alAqiq from './mapPictures/alAqiq.png'
 import alQiblatayn from './mapPictures/alQiblatayn.png'
 import alSalam from './mapPictures/alSalam.png'
@@ -39,6 +38,27 @@ import alHujun from './mapPictures/alHujun.png'
 import alShubaikah from './mapPictures/alShubaikah.png'
 import alMansour from './mapPictures/alMansour.png'
 import alHindawiyyah from './mapPictures/alHindawiyyah.png'
+
+import alAdama from './mapPictures/alAdama.png'
+import alAnud from './mapPictures/alAnud.png'
+import alShati from './mapPictures/alShati.png'
+import alRakah from './mapPictures/alRakah.png'
+import alDanah from './mapPictures/alDanah.png'
+import alHawiyah from './mapPictures/alHawiyah.png'
+import alWard from './mapPictures/alWard.png'
+import alHada from './mapPictures/alHada.png'
+import alQouraiat from './mapPictures/alQouraiat.png'
+import alShafa from './mapPictures/alShafa.png'
+import alRawda from './mapPictures/alRawda.png'
+import alSharafiyah from './mapPictures/alSharafeyah.png'
+import alQadisiyah from './mapPictures/alQadisiyah.png'
+import alWajh from './mapPictures/alWajh.png'
+import alSamdah from './mapPictures/alSamdah.png'
+import zamalek from './mapPictures/zamalek.png'
+import maadi from './mapPictures/maadi.png'
+import heliopolis from './mapPictures/heliopolis.png'
+import doqi from './mapPictures/doqi.png'
+import gizaa from './mapPictures/gizaa.png'
 
 import spoon from './icons/cutlery.png'
 
@@ -982,6 +1002,245 @@ const data = [
         sum: 0
     },
 
+    {
+        image: alAdama,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alAnud,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alShati,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alRakah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alDanah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alHawiyah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alWard,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alHada,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alQouraiat,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alShafa,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alRawda,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alSharafiyah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alQadisiyah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alWajh,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: alSamdah,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: zamalek,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: maadi,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: heliopolis,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: doqi,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
+
+    {
+        image: gizaa,
+        restaurants: [
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+            {name: "-", riders: 0, ridersDetails: [], imgUrl: spoon},
+        ], 
+        sum: 0
+    },
 
 ]
 
