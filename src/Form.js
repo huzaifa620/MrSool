@@ -21,12 +21,12 @@ const Form = () => {
     "Taif": {"Al-Hawiyah": 43, "Al-Ward": 44, "Al-Hada": 45, "Al Qouraiat": 46, "Al-Shafa": 47},
     "Tabuk": {"Al-Rawdah": 48, "Al-Sharafiyah": 49, "Al-Qadisiyah": 50, "Al-Wajh": 51, "Al-Samdah": 52},
     "Cairo": {"Zamalek": 53, "Maadi": 54, "Heliopolis": 55, "Dokki": 56, "Giza": 57},
-    "Alexandria": {"Montaza": 58, "Smouha": 59, "Raml Station": 60, "Miami": 61, "Al-Montaza": 62},
-    "Giza": {"Doqi": 63, "Mohandessin": 64, "Agouza": 65, "Haram": 66, "Faisal": 67},
-    "Sharm El-Sheikh": {"Naama Bay": 68, "Ras Um Sid": 69, "Shark's Bay": 70, "Hadaba": 71, "Nabq": 72},
-    "Luxor": {"East Bank": 73, "West Bank": 74, "Karnak": 75, "Al-Gurna": 76, "Al-Toud": 77},
-    "Aswan": {"Aswan City": 78, "Elephantine Island": 79, "Nubian Village": 80, "Kom Ombo": 81, "Abu Simbel": 82},
-    "Hurghada": {"El Dahar": 83, "Sakkala": 84, "Makadi Bay": 85, "Soma Bay": 86, "El Gouna": 87},
+    "Alexandria": {"Montaza": 53, "Smouha": 54, "Raml Station": 55, "Miami": 56, "Al-Montaza": 57},
+    "Giza": {"Doqi": 53, "Mohandessin": 54, "Agouza": 55, "Haram": 56, "Faisal": 57},
+    "Sharm El-Sheikh": {"Naama Bay": 53, "Ras Um Sid": 54, "Shark's Bay": 55, "Hadaba": 56, "Nabq": 57},
+    "Luxor": {"East Bank": 53, "West Bank": 54, "Karnak": 55, "Al-Gurna": 56, "Al-Toud": 57},
+    "Aswan": {"Aswan City": 53, "Elephantine Island": 54, "Nubian Village": 55, "Kom Ombo": 56, "Abu Simbel": 57},
+    "Hurghada": {"El Dahar": 53, "Sakkala": 54, "Makadi Bay": 55, "Soma Bay": 56, "El Gouna": 57},
   }  
   );
 
